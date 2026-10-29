@@ -1,0 +1,16 @@
+{
+  "name": "MOBYFLOW - Nền tảng Quản trị & Bán hàng Trực tuyến",
+  "short_name": "MOBYFLOW",
+  "description": "Giải pháp quản lý bán hàng đa kênh, tối ưu doanh thu và vận hành thương mại điện tử chuyên nghiệp",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#139091",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64 128x128 256x256",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+# Robots.txt for MOBYFLOW
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Host
+Host: https://mobyflow.vn
+
+# Sitemap
+Sitemap: https://mobyflow.vn/sitemap.xml
