@@ -1,5 +1,7 @@
 import React from 'react';
 import ScrollReveal from './ScrollReveal';
+import CountUp from './CountUp';
+import RevealText from './RevealText';
 import { Avatar } from 'antd';
 import {
   CheckCircleFilled,
@@ -56,15 +58,16 @@ const categories = [
 
 const StatsAndTestimonials = () => {
   return (
-    <section id="testimonials" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="relative py-20 bg-white overflow-hidden">
+      <div className="dot-grid" aria-hidden="true" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Statistics 4 Numbers */}
         <ScrollReveal direction="up">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-teal-50 via-emerald-50/50 to-teal-50 border border-teal-100/70 mb-20">
             {stats.map((s, idx) => (
               <div key={idx} className="text-center">
                 <div className="text-3xl sm:text-4xl lg:text-[42px] font-black bg-gradient-to-r from-[#139091] to-teal-700 bg-clip-text text-transparent font-outfit leading-none">
-                  {s.value}
+                  <CountUp value={s.value} />
                 </div>
                 <div className="text-sm sm:text-base font-bold text-gray-900 mt-2.5 sm:whitespace-nowrap">
                   {s.label}
@@ -84,9 +87,9 @@ const StatsAndTestimonials = () => {
               Chia Sẻ Thực Tế
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight max-w-3xl mx-auto">
-              Hàng trăm chủ Shop Mẹ &amp; Bé{' '}
+              <RevealText text="Hàng trăm chủ Shop Mẹ & Bé" />{' '}
               <br className="hidden md:inline" />
-              đã giải phóng sức lao động cùng MobyFlow
+              <RevealText text="đã giải phóng sức lao động cùng MobyFlow" startDelay={0.35} flash />
             </h2>
             <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Lắng nghe câu chuyện thực tế từ những chủ shop sữa bỉm,{' '}
@@ -99,8 +102,18 @@ const StatsAndTestimonials = () => {
         {/* Testimonial Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {testimonials.map((t, idx) => (
-            <ScrollReveal key={t.name} direction="up" delay={idx * 0.1}>
-              <div className="h-full bg-slate-50/70 p-7 rounded-3xl border border-gray-100 shadow-2xs hover:shadow-lg hover:border-teal-300 transition-all duration-300 flex flex-col justify-between">
+            <ScrollReveal key={t.name} direction="up" delay={idx * 0.1} className="h-full">
+              <div
+                className="note-card h-full"
+                style={{
+                  '--rotate': `${[-1.6, 1.2, -0.9][idx % 3]}deg`,
+                  '--offset': `${[0, 6, -4][idx % 3]}px`,
+                  '--duration': `${[3.6, 4.2, 3.9][idx % 3]}s`,
+                  '--delay': `${idx * 0.4}s`,
+                }}
+              >
+              <span className="note-pin" aria-hidden="true" />
+              <div className="h-full bg-slate-50/70 p-7 rounded-3xl border border-gray-100 shadow-lg shadow-teal-900/5 hover:shadow-xl hover:border-teal-300 transition-shadow flex flex-col justify-between">
                 <div>
                   <div className="flex items-center space-x-1 text-amber-400 mb-4 text-sm">
                     {[...Array(t.stars)].map((_, i) => (
@@ -127,6 +140,7 @@ const StatsAndTestimonials = () => {
                     </span>
                   </div>
                 </div>
+              </div>
               </div>
             </ScrollReveal>
           ))}

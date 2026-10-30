@@ -63,8 +63,8 @@ const Navbar = ({ onOpenTrial }) => {
       <header
         id="landing-header"
         className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-3'
-          : 'bg-transparent py-4'
+          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100 py-3'
+          : 'bg-[#051312]/85 backdrop-blur-md border-b border-teal-500/20 shadow-xl shadow-black/30 py-3.5'
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -74,11 +74,19 @@ const Navbar = ({ onOpenTrial }) => {
             href="/"
             className="flex items-center no-underline group py-1"
           >
-            <img
-              src="/images/logo mobyflow2-01.png"
-              alt="MOBYFLOW - Mom Baby Flow"
-              className="h-9 sm:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
-            />
+            <div
+              className={`flex items-center transition-all duration-200 ${
+                !scrolled
+                  ? 'px-3.5 py-1.5 rounded-full bg-white/95 shadow-md shadow-black/30 border border-white/50 group-hover:scale-105 group-hover:bg-white'
+                  : 'group-hover:scale-105'
+              }`}
+            >
+              <img
+                src="/images/logo mobyflow2-01.png"
+                alt="MOBYFLOW - Mom Baby Flow"
+                className="h-7 sm:h-8 w-auto object-contain"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -88,7 +96,7 @@ const Navbar = ({ onOpenTrial }) => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="px-3.5 py-2 text-sm lg:text-[15px] font-semibold text-gray-700 hover:text-[#139091] rounded-lg hover:bg-teal-50/50 transition-colors whitespace-nowrap no-underline cursor-pointer"
+                className={`header-nav-link ${scrolled ? 'header-nav-link-scrolled' : ''}`}
               >
                 {link.label}
               </a>
@@ -102,7 +110,7 @@ const Navbar = ({ onOpenTrial }) => {
               type="primary"
               size="large"
               onClick={onOpenTrial}
-              className="bg-gradient-to-r from-[#139091] to-teal-700 hover:from-teal-700 hover:to-[#0f766e] border-0 shadow-md shadow-teal-600/20 font-semibold text-sm sm:text-base px-6 rounded-xl h-10 flex items-center gap-2 text-white"
+              className="btn-shine bg-gradient-to-r from-[#139091] via-teal-600 to-emerald-600 hover:from-teal-600 hover:to-[#0f766e] border-0 shadow-lg shadow-teal-600/30 font-bold text-sm sm:text-base px-6 rounded-xl h-10 flex items-center gap-2 text-white hover:scale-105 transition-all"
             >
               Đăng ký dùng thử
             </Button>
@@ -113,7 +121,7 @@ const Navbar = ({ onOpenTrial }) => {
             <Button
               id="btn-mobile-menu-toggle"
               type="text"
-              icon={<MenuOutlined className="text-xl text-gray-700" />}
+              icon={<MenuOutlined className={`text-xl ${scrolled ? 'text-gray-700' : 'text-white'}`} />}
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Mở menu điều hướng"
             />

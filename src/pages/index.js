@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SEO from '@/components/SEO';
 import Navbar from '@/components/landing/Navbar';
+import StatementHeroSection from '@/components/landing/StatementHeroSection';
 import HeroSection from '@/components/landing/HeroSection';
 import PainPointsSection from '@/components/landing/PainPointsSection';
 // import AiEcosystem from '@/components/landing/AiEcosystem';
@@ -14,6 +15,10 @@ import FaqSection from '@/components/landing/FaqSection';
 import CtaBanner from '@/components/landing/CtaBanner';
 import MegaFooter from '@/components/landing/MegaFooter';
 import TrialModal from '@/components/landing/TrialModal';
+import FloatingContact from '@/components/landing/FloatingContact';
+import MobileStickyCta from '@/components/landing/MobileStickyCta';
+import ScrollProgress from '@/components/landing/ScrollProgress';
+import MarqueeBand from '@/components/landing/MarqueeBand';
 
 export default function LandingPage() {
   const [trialModalOpen, setTrialModalOpen] = useState(false);
@@ -46,15 +51,27 @@ export default function LandingPage() {
         ogImage="https://mobyflow.vn/images/og-image.jpg"
       />
 
+      {/* Thanh tiến trình cuộn */}
+      <ScrollProgress />
+
       {/* Navigation Header */}
       <Navbar onOpenTrial={handleOpenTrial} />
 
       {/* Main Content Sections */}
       <main id="main-content">
-        {/* 1. Hero Section with Simulated Zalo ZNS & KiotViet Auto Cycle Mockup */}
+        {/* 1. Landing Statement Hero Section (Phong cách Dabilux.com: Dark mode, Letter-Rise, Particles & Glow) */}
+        <StatementHeroSection onOpenTrial={handleOpenTrial} />
+
+        {/* Dải Marquee phong cách viền sáng chuyển tiếp */}
+        <MarqueeBand variant="outline" />
+
+        {/* 2. Interactive Live Demo Showcase (Hero Section cũ giữ nguyên 100% với Mô phỏng Zalo ZNS & KiotViet) */}
         <HeroSection onOpenTrial={handleOpenTrial} />
 
-        {/* 2. Nỗi Đau Của Các Shop Mẹ & Bé (Pain Points & Comparison) */}
+        {/* Dải marquee điểm nhấn giữa Demo và Pain Points */}
+        <MarqueeBand />
+
+        {/* 3. Nỗi Đau Của Các Shop Mẹ & Bé (Pain Points & Comparison) */}
         <PainPointsSection />
 
         {/* ========================================================================= */}
@@ -83,11 +100,16 @@ export default function LandingPage() {
         <FaqSection />
 
         {/* 11. Banner Kêu Gọi Hành Động (CTA) */}
+        <MarqueeBand variant="outline" reverse />
         <CtaBanner onOpenTrial={handleOpenTrial} />
       </main>
 
       {/* Mega Footer */}
       <MegaFooter />
+
+      {/* Điểm chạm nổi: Zalo / Hotline / Dùng thử + thanh CTA mobile */}
+      <FloatingContact onOpenTrial={handleOpenTrial} />
+      <MobileStickyCta onOpenTrial={handleOpenTrial} />
 
       {/* Free Trial Registration Modal */}
       <TrialModal

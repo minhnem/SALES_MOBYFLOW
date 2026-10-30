@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button, Tag, Avatar } from 'antd';
 import {
   ThunderboltOutlined,
@@ -10,6 +10,9 @@ import {
   HeartOutlined,
 } from '@ant-design/icons';
 import ScrollReveal from './ScrollReveal';
+import RevealText from './RevealText';
+import TechGridBackground from './TechGridBackground';
+import WanderingCursor from './WanderingCursor';
 
 const CORE_FEATURES = [
   {
@@ -108,16 +111,30 @@ const CORE_FEATURES = [
 
 const HeroSection = ({ onOpenTrial }) => {
   const [activeFeature, setActiveFeature] = useState(0);
+  const heroContainerRef = useRef(null);
+
   const currentFeature = CORE_FEATURES[activeFeature];
   const currentZns = currentFeature.znsData;
 
   return (
-    <section className="relative pt-6 pb-20 md:pt-12 md:pb-28 overflow-hidden bg-gradient-to-b from-teal-50/70 via-white to-slate-50">
+    <section
+      id="interactive-demo"
+      ref={heroContainerRef}
+      className="relative isolate pt-6 pb-20 md:pt-12 md:pb-28 overflow-hidden bg-gradient-to-b from-teal-50/70 via-white to-slate-50"
+    >
+      {/* Nền kiểu dabilux: lưới tech + hạt sáng chạy + glow, và con trỏ tự động bấm tuần tự 4 nút */}
+      <TechGridBackground variant="light" />
+      <WanderingCursor containerRef={heroContainerRef} />
       {/* Background Decorative Glow Blobs */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-teal-300/20 via-sky-200/20 to-teal-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
+      {/* Aurora chuyển động */}
+      <div className="animate-aurora absolute -top-20 -left-24 w-[420px] h-[420px] rounded-full bg-teal-300/30 blur-3xl pointer-events-none -z-10" />
+      <div className="animate-aurora-slow absolute top-1/3 -right-24 w-[380px] h-[380px] rounded-full bg-amber-200/30 blur-3xl pointer-events-none -z-10" />
+      <div className="animate-float absolute top-24 right-[6%] hidden xl:block text-4xl pointer-events-none select-none" aria-hidden="true">🍼</div>
+      <div className="animate-float-delay absolute bottom-24 left-[3%] hidden xl:block text-4xl pointer-events-none select-none" aria-hidden="true">👶</div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="relative z-[5] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Heading, Subtitle & 3 Core Features */}
           <div className="lg:col-span-7 text-center lg:text-left">
             <ScrollReveal direction="up" delay={0.1}>
@@ -129,15 +146,13 @@ const HeroSection = ({ onOpenTrial }) => {
               </div>
             </ScrollReveal>
 
-            <ScrollReveal direction="up" delay={0.2}>
-              <h1 className="text-3xl sm:text-5xl lg:text-[48px] font-black tracking-tight text-gray-900 leading-[1.18] mb-5">
-                Tự động hóa chăm sóc khách hàng theo{' '}
-                <span className="bg-gradient-to-r from-[#139091] via-teal-700 to-emerald-700 bg-clip-text text-transparent">
-                  chu kỳ sữa bỉm
-                </span>{' '}
-                qua Zalo ZNS
-              </h1>
-            </ScrollReveal>
+            <h1 className="text-3xl sm:text-5xl lg:text-[48px] font-black tracking-tight text-gray-900 leading-[1.18] mb-5">
+              <RevealText text="Tự động hóa chăm sóc khách hàng theo" startDelay={0.2} immediate />{' '}
+              <span className="text-[#139091]">
+                <RevealText text="chu kỳ sữa bỉm" startDelay={0.9} immediate flash />
+              </span>{' '}
+              <RevealText text="qua Zalo ZNS" startDelay={1.3} immediate />
+            </h1>
 
             <ScrollReveal direction="up" delay={0.25}>
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 max-w-2xl mx-auto lg:mx-0">
@@ -154,8 +169,9 @@ const HeroSection = ({ onOpenTrial }) => {
                   return (
                     <div
                       key={item.id}
+                      id={`hero-card-${index}`}
                       onClick={() => setActiveFeature(index)}
-                      className={`cursor-pointer rounded-2xl p-3.5 transition-all duration-200 border text-left relative ${isSelected
+                      className={`cursor-pointer rounded-2xl p-3.5 transition-all duration-200 border text-left relative active:scale-[0.98] ${isSelected
                         ? `${item.cardBorder} shadow-md ring-2 ring-offset-1 ${item.accent === 'teal' || item.accent === 'blue'
                           ? 'ring-[#139091] border-[#139091]'
                           : item.accent === 'purple'
@@ -361,34 +377,22 @@ const HeroSection = ({ onOpenTrial }) => {
                       {/* ZNS Action Button - Authentic Zalo Blue Style */}
                       <div className="space-y-2">
                         <Button
+                          id="hero-zns-action-btn"
                           block
                           type="primary"
-                          className="bg-[#0068ff] hover:bg-blue-600 font-bold rounded-xl h-10 shadow-xs border-0 text-white flex items-center justify-center text-sm"
+                          className="bg-[#0068ff] hover:bg-blue-600 active:scale-95 transition-all duration-150 font-bold rounded-xl h-10 shadow-xs border-0 text-white flex items-center justify-center text-sm cursor-pointer"
                         >
                           {currentZns.primaryBtnText}
                         </Button>
                         <Button
+                          id="hero-zns-secondary-btn"
                           block
-                          className="font-semibold text-xs sm:text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-xl h-9 border-0"
+                          className="font-semibold text-xs sm:text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 active:scale-95 transition-all rounded-xl h-9 border-0 cursor-pointer"
                         >
                           {currentZns.secondaryBtnText}
                         </Button>
                       </div>
                     </div>
-
-                    {/* Result Card: Auto Order to KiotViet */}
-                    {/* <div className="p-3 bg-emerald-50/80 rounded-2xl border border-emerald-200 flex items-center justify-between text-xs text-emerald-900">
-                      <div className="flex items-center space-x-2">
-                        <GiftOutlined className="text-emerald-600 text-base" />
-                        <div>
-                          <div className="font-bold">{currentZns.resultText}</div>
-                          <div className="text-[11px] text-emerald-700">{currentZns.resultSub}</div>
-                        </div>
-                      </div>
-                      <Tag color="green" className="m-0 font-bold">
-                        {currentZns.resultAmount}
-                      </Tag>
-                    </div> */}
                   </div>
 
                   {/* Mockup Footer */}
