@@ -20,7 +20,7 @@ const CORE_FEATURES = [
     number: '01',
     badge: 'Chu kỳ bỉm sữa',
     title: 'Nhắc mua hàng theo chu kỳ',
-    shortDesc: 'Tự động đếm ngược ngày hết bỉm, sữa; kích hoạt ZNS nhắc mẹ trước 2-3 ngày chốt đơn tức thì.',
+    shortDesc: 'Tự đếm ngược ngày hết bỉm sữa, kích hoạt ZNS nhắc mẹ trước 2-3 ngày chốt đơn.',
     icon: <SyncOutlined />,
     accent: 'teal',
     cardBorder: 'border-[#139091] bg-teal-50/50 shadow-teal-600/10',
@@ -50,7 +50,7 @@ const CORE_FEATURES = [
     number: '02',
     badge: 'Vòng đời Mẹ Bầu & Bé',
     title: 'Chăm sóc theo vòng đời Mẹ Bầu & Bé',
-    shortDesc: 'Bao trọn từ thai kỳ (vitamin bầu, giỏ đồ đi sinh) đến bé 0-36 tháng (đổi số sữa, ăn dặm & vi chất).',
+    shortDesc: 'Bao trọn từ thai kỳ (vitamin, đồ đi sinh) đến bé 0-36m (đổi số sữa, ăn dặm).',
     icon: <HeartOutlined />,
     accent: 'purple',
     cardBorder: 'border-purple-500 bg-purple-50/50 shadow-purple-500/10',
@@ -81,7 +81,7 @@ const CORE_FEATURES = [
     number: '03',
     badge: 'Chiến dịch tháng',
     title: 'Chiến dịch gửi tin nhắn theo sự kiện tháng',
-    shortDesc: 'Tự động kích hoạt ngày hội thành viên, sinh nhật mẹ & bé, siêu sale ngày đôi kéo khách quay lại.',
+    shortDesc: 'Kích hoạt ưu đãi ngày hội thành viên, sinh nhật mẹ & bé, kéo khách cũ quay lại.',
     icon: <GiftOutlined />,
     accent: 'amber',
     cardBorder: 'border-amber-500 bg-amber-50/50 shadow-amber-500/10',
@@ -120,7 +120,7 @@ const HeroSection = ({ onOpenTrial }) => {
     <section
       id="interactive-demo"
       ref={heroContainerRef}
-      className="relative isolate pt-6 pb-20 md:pt-12 md:pb-28 overflow-hidden bg-gradient-to-b from-teal-50/70 via-white to-slate-50"
+      className="relative isolate pt-2 pb-20 md:pt-12 md:pb-28 overflow-hidden bg-gradient-to-b from-teal-50/70 via-white to-slate-50"
     >
       {/* Nền kiểu dabilux: lưới tech + hạt sáng chạy + glow, và con trỏ tự động bấm tuần tự 4 nút */}
       <TechGridBackground variant="light" />
@@ -156,8 +156,7 @@ const HeroSection = ({ onOpenTrial }) => {
 
             <ScrollReveal direction="up" delay={0.25}>
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 max-w-2xl mx-auto lg:mx-0">
-                Kết nối trực tiếp phần mềm <strong>KiotViet</strong>, tự động hóa quy trình nuôi dưỡng khách hàng,{' '}
-                với <strong>3 chức năng trọng tâm</strong> qua Zalo ZNS thương hiệu tích vàng:
+                Đồng bộ <strong>KiotViet</strong> trong 30s, tự động đếm chu kỳ và kích hoạt Zalo ZNS tích vàng theo <strong>3 kịch bản trọng tâm</strong>:
               </p>
             </ScrollReveal>
 

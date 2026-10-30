@@ -16,16 +16,16 @@ const features = [
   {
     icon: <CalendarClock className="w-6 h-6 text-purple-600" strokeWidth={2.2} />,
     title: 'Cấu Hình Chu Kỳ Sản Phẩm',
-    desc: 'Cài đặt số ngày sử dụng cho bỉm, sữa bột, vitamin. Hệ thống tự động theo dõi chu kỳ từng khách.',
+    desc: 'Định mức số ngày dùng cho từng loại sữa bỉm, tự động kích hoạt đếm ngược.',
     points: ['Tính chính xác ngày sắp hết hàng', 'Cảnh báo mốc bé cần đổi số sữa'],
-    badge: 'Cốt Lõi Hệ Thống',
+    badge: 'Cốt lõi',
     borderHover: 'hover:border-purple-400',
     iconBg: 'bg-purple-50',
   },
   {
     icon: <Zap className="w-6 h-6 text-[#139091]" strokeWidth={2.2} />,
     title: 'Tự Động Hóa Chăm Sóc',
-    desc: 'Tự động kích hoạt tin nhắn trước 2-3 ngày khi khách sắp hết hàng, hoàn toàn rảnh tay quanh năm.',
+    desc: 'Bắn tin nhắc mẹ trước 2-3 ngày khi sắp hết hàng, hoàn toàn rảnh tay quanh năm.',
     points: ['Tự động gửi trước 2-3 ngày', 'Không bao giờ quên hoặc sót khách'],
     badge: 'Rảnh tay 100%',
     borderHover: 'hover:border-teal-400',
@@ -34,36 +34,36 @@ const features = [
   {
     icon: <MessageSquareCheck className="w-6 h-6 text-sky-600" strokeWidth={2.2} />,
     title: 'Kho Mẫu Zalo ZNS',
-    desc: 'Mẫu tin ZNS chính chủ tích vàng, tự động chèn tên mẹ, tên bé và voucher giảm giá riêng biệt.',
-    points: ['Cá nhân hóa nội dung tin 100%', 'Nút đặt hàng nhanh 1 chạm'],
-    badge: 'Tỷ lệ mở 98.5%',
+    desc: 'Mẫu tin ZNS tích vàng thương hiệu, cá nhân hóa tên mẹ, tên bé và mã giảm giá.',
+    points: ['Tỷ lệ mở đọc đạt 98.5%', 'Nút đặt lại đơn nhanh 1 chạm'],
+    badge: 'Mở 98.5%',
     borderHover: 'hover:border-sky-400',
     iconBg: 'bg-sky-50',
   },
   {
     icon: <Send className="w-6 h-6 text-indigo-600" strokeWidth={2.2} />,
-    title: '3 Mô Hình Chiến Dịch',
-    desc: 'Quy chuẩn 3 kịch bản: Nhắc mua lại bỉm sữa, Chăm sóc vòng đời Mẹ Bầu (thai kỳ, giỏ đồ đi sinh) & Bé (0-36m), và Ưu đãi định kỳ tháng.',
+    title: '3 Kịch Bản Chiến Dịch',
+    desc: 'Quy chuẩn 3 luồng: Chu kỳ bỉm sữa, Vòng đời mẹ bầu & bé (0-36m), và Ưu đãi tháng.',
     points: ['Đồng hành từ tuần thai đến 3 tuổi', 'Kéo khách cũ quay lại tự nhiên'],
-    badge: '3 Loại Chiến Dịch',
+    badge: '3 Kịch bản',
     borderHover: 'hover:border-indigo-400',
     iconBg: 'bg-indigo-50',
   },
   {
     icon: <Users className="w-6 h-6 text-emerald-600" strokeWidth={2.2} />,
     title: 'Quản Lý Khách Hàng',
-    desc: 'Bộ lọc thông minh theo ngày mua, sản phẩm và chu kỳ. Hỗ trợ nhập và xuất file Excel tức thì.',
-    points: ['Lọc nhanh theo chu kỳ & độ tuổi bé', 'Nhập/xuất file Excel trong 1 click'],
-    badge: 'Dữ liệu chuẩn xác',
+    desc: 'Lọc thông minh theo ngày mua, chu kỳ sản phẩm và hỗ trợ đồng bộ Excel 1-click.',
+    points: ['Lọc theo chu kỳ & độ tuổi bé', 'Nhập/xuất Excel trong 1 phút'],
+    badge: 'Chuẩn xác',
     borderHover: 'hover:border-emerald-400',
     iconBg: 'bg-emerald-50',
   },
   {
     icon: <BarChart3 className="w-6 h-6 text-amber-600" strokeWidth={2.2} />,
-    title: 'Báo Cáo & Thống Kê',
-    desc: 'Theo dõi chi tiết số lượng tin nhắn đã gửi, tỷ lệ gửi thành công và ngân sách ZNS theo từng chiến dịch.',
-    points: ['Thống kê số lượng tin theo tháng', 'Kiểm soát chi phí gửi tin ZNS'],
-    badge: 'Minh bạch 100%',
+    title: 'Báo Cáo Doanh Thu & ROI',
+    desc: 'Đối soát đơn hàng phát sinh sau khi gửi tin, đo lường chính xác hiệu quả từng chiến dịch.',
+    points: ['Thống kê số tin & tỷ lệ chuyển đổi', 'Đo lường doanh thu và ROI minh bạch'],
+    badge: 'Minh bạch',
     borderHover: 'hover:border-amber-400',
     iconBg: 'bg-amber-50',
   },
@@ -74,17 +74,15 @@ const FeaturesGrid = () => {
     <section id="features" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
-          <div className="text-center max-w-4xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#139091] bg-teal-50 px-3 py-1 rounded-full inline-block">
-              Tính Năng Đã Hoàn Thiện 100%
+              Tính Năng Nền Tảng
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
-              Đầy đủ công cụ chuyên sâu cho ngành Mẹ &amp; Bé
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight mt-2 mb-3">
+              Đầy đủ công cụ chuyên sâu cho Shop Mẹ &amp; Bé
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Mọi tính năng đều được tối ưu hóa theo quy trình thực tế,{' '}
-              <br className="hidden md:inline" />
-              từ quản lý chu kỳ bỉm sữa đến tự động gửi Zalo ZNS và thống kê.
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+              Tối ưu cho quy trình thực tế: từ đếm chu kỳ bỉm sữa đến tự động gửi ZNS và đối soát đơn KiotViet.
             </p>
           </div>
         </ScrollReveal>

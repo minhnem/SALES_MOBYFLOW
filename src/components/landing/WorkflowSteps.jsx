@@ -11,29 +11,29 @@ import {
 const steps = [
   {
     step: '01',
-    title: 'Khách mua bỉm/sữa tại shop hoặc online',
-    desc: 'Hóa đơn được tạo trên phần mềm KiotViet hoặc nhập từ file Excel. MobyFlow tự động nhận diện dữ liệu khách và sản phẩm.',
+    title: 'Khách mua bỉm sữa',
+    desc: 'Hóa đơn phát sinh trên KiotViet hoặc Excel. MobyFlow tự động đồng bộ khách và sản phẩm.',
     icon: <Store className="w-6 h-6 text-[#139091]" strokeWidth={2.2} />,
     iconBg: 'bg-teal-50',
   },
   {
     step: '02',
-    title: 'MobyFlow tự động đếm ngược chu kỳ',
-    desc: 'Dựa trên cấu hình sản phẩm (Ví dụ: hộp sữa 800g = 12 ngày), hệ thống tự động kích hoạt bộ đếm ngược chu kỳ tiêu dùng của bé.',
+    title: 'Tự động đếm chu kỳ',
+    desc: 'Hệ thống tự đếm ngược theo định mức tiêu dùng của bé (VD: lon sữa 800g = 12 ngày).',
     icon: <Timer className="w-6 h-6 text-purple-600" strokeWidth={2.2} />,
     iconBg: 'bg-purple-50',
   },
   {
     step: '03',
-    title: 'Gửi tin Zalo ZNS nhắc mẹ trước 2 ngày',
-    desc: 'Đúng ngày thứ 10, hệ thống tự động gửi tin nhắn thương hiệu tích vàng Zalo ZNS nhắc mẹ: "Sữa của bé sắp hết rồi, mẹ đặt lại để nhận quà nhé!".',
+    title: 'Gửi ZNS trước 2-3 ngày',
+    desc: 'Tự động bắn tin ZNS tích vàng nhắc mẹ mua lại kèm mã voucher ưu đãi riêng.',
     icon: <MessageSquareCheck className="w-6 h-6 text-sky-600" strokeWidth={2.2} />,
     iconBg: 'bg-sky-50',
   },
   {
     step: '04',
-    title: 'Mẹ đặt lại hàng - Tự động ghi nhận KiotViet',
-    desc: 'Mẹ bỉm chỉ cần bấm nút "Đặt lại ngay" trong Zalo. Đơn hàng tự động đổ về KiotViet, doanh thu tái mua tăng vọt mà không mất 1 đồng tiền Ads.',
+    title: 'Mẹ 1-chạm đặt lại đơn',
+    desc: 'Mẹ bấm đặt hàng ngay trên Zalo. Đơn tự động tạo trên KiotViet, không tốn 1 đồng tiền Ads.',
     icon: <CheckCircle2 className="w-6 h-6 text-emerald-600" strokeWidth={2.2} />,
     iconBg: 'bg-emerald-50',
   },
@@ -44,17 +44,15 @@ const WorkflowSteps = () => {
     <section id="workflow" className="py-20 bg-gradient-to-b from-slate-50/50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-3 py-1 rounded-full inline-block">
-              Quy Trình Khép Kín 4 Bước
+              Quy Trình 4 Bước Tự Động
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
-              Từ lúc khách mua đến khi tự động quay lại mua lần tiếp theo
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight mt-2 mb-3">
+              Tự động hóa từ lúc mua đến khi khách quay lại
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Quy trình tự động giúp shop chăm sóc hàng ngàn mẹ bỉm cùng lúc,{' '}
-              <br className="hidden md:inline" />
-              đúng thời điểm sắp hết sữa bỉm mà không cần nhân viên ghi sổ thủ công.
+            <p className="text-base sm:text-lg text-gray-600">
+              Chăm sóc hàng ngàn mẹ bỉm cùng lúc, đúng thời điểm cạn hàng mà không cần ghi sổ thủ công.
             </p>
           </div>
         </ScrollReveal>

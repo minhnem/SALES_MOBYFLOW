@@ -30,10 +30,8 @@ const ProductShowcase = ({ onOpenTrial }) => {
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
               Trực quan hóa quy trình chăm sóc chu kỳ khách hàng
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Giao diện hiện đại, dễ thao tác dành riêng cho chủ shop và nhân viên ngành mẹ &amp; bé,{' '}
-              <br className="hidden md:inline" />
-              không cần kiến thức phức tạp, làm quen và sử dụng thành thạo sau 15 phút.
+            <p className="mt-2 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+              Thiết kế tinh gọn cho chủ shop Mẹ &amp; Bé, làm quen và sử dụng thành thạo sau 15 phút.
             </p>
           </div>
         </ScrollReveal>
@@ -115,36 +113,36 @@ const ProductShowcase = ({ onOpenTrial }) => {
 
         {/* 3 Value Pillars under Showcase */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 flex items-start space-x-3.5">
-            <SyncOutlined className="text-2xl text-emerald-400 mt-0.5 shrink-0" />
+          <div className="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10 flex items-start space-x-3.5">
+            <SyncOutlined className="text-xl text-emerald-400 mt-1 shrink-0" />
             <div className="flex-1">
-              <div className="font-bold text-[18px] text-white mb-1.5 min-h-[1.75rem] flex items-center">
+              <div className="font-bold text-base sm:text-lg text-white mb-1">
                 Đồng bộ KiotViet tự động 100%
               </div>
-              <div className="text-sm sm:text-[15px] text-gray-300 leading-relaxed min-h-[3.25rem] flex items-start">
-                Mọi hóa đơn bán tại quầy tự động chuyển hóa thành chu kỳ chăm sóc mà không cần nhập tay.
+              <div className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                Tự động chuyển hóa đơn tại quầy thành lịch chăm sóc chu kỳ, không cần nhập tay.
               </div>
             </div>
           </div>
-          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 flex items-start space-x-3.5">
-            <ThunderboltOutlined className="text-2xl text-teal-400 mt-0.5 shrink-0" />
+          <div className="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10 flex items-start space-x-3.5">
+            <ThunderboltOutlined className="text-xl text-teal-400 mt-1 shrink-0" />
             <div className="flex-1">
-              <div className="font-bold text-[18px] text-white mb-1.5 min-h-[1.75rem] flex items-center">
+              <div className="font-bold text-base sm:text-lg text-white mb-1">
                 Đếm ngược chu kỳ chuẩn xác
               </div>
-              <div className="text-sm sm:text-[15px] text-gray-300 leading-relaxed min-h-[3.25rem] flex items-start">
-                Tự động tính ngày bé hết sữa, hết bỉm và gửi tin nhắc mẹ trước 2-3 ngày đúng thời điểm vàng.
+              <div className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                Tự tính ngày bé hết sữa bỉm, gửi tin nhắc mẹ trước 2-3 ngày đúng điểm chạm.
               </div>
             </div>
           </div>
-          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 flex items-start space-x-3.5">
-            <CheckCircleOutlined className="text-2xl text-purple-400 mt-0.5 shrink-0" />
+          <div className="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10 flex items-start space-x-3.5">
+            <CheckCircleOutlined className="text-xl text-purple-400 mt-1 shrink-0" />
             <div className="flex-1">
-              <div className="font-bold text-[18px] text-white mb-1.5 min-h-[1.75rem] flex items-center">
-                Tin nhắn Zalo ZNS Tích Vàng
+              <div className="font-bold text-base sm:text-lg text-white mb-1">
+                Zalo ZNS Tích Vàng Chính Hãng
               </div>
-              <div className="text-sm sm:text-[15px] text-gray-300 leading-relaxed min-h-[3.25rem] flex items-start">
-                Tỷ lệ mở 98.5%, tin nhắn thương hiệu uy tín chính chủ, tuyệt đối không bị khóa tài khoản Zalo.
+              <div className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                Tỷ lệ mở 98.5%, tin nhắn thương hiệu uy tín chính chủ, không bao giờ lo bị khóa nick.
               </div>
             </div>
           </div>

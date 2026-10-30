@@ -257,8 +257,8 @@ html {
 
 .tech-grid-dark {
   background-image:
-    linear-gradient(rgba(94, 234, 212, 0.14) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(94, 234, 212, 0.14) 1px, transparent 1px);
+    linear-gradient(rgba(153, 246, 228, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(153, 246, 228, 0.16) 1px, transparent 1px);
 }
 
 .tg-glow {
@@ -268,19 +268,19 @@ html {
 }
 
 .tg-glow-1 {
-  width: 28rem;
-  height: 28rem;
+  width: 36rem;
+  height: 36rem;
   top: -8rem;
-  left: -6rem;
-  background: rgba(19, 144, 145, 0.22);
+  left: -4rem;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.35) 0%, rgba(19, 144, 145, 0.15) 60%, transparent 100%);
 }
 
 .tg-glow-2 {
-  width: 24rem;
-  height: 24rem;
-  bottom: -8rem;
-  right: -4rem;
-  background: rgba(245, 158, 11, 0.18);
+  width: 32rem;
+  height: 32rem;
+  bottom: -6rem;
+  right: -2rem;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.3) 0%, rgba(15, 118, 110, 0.12) 60%, transparent 100%);
 }
 
 .tg-particle {
@@ -589,32 +589,32 @@ html {
 .statement-section {
   position: relative;
   z-index: 1;
-  background: radial-gradient(ellipse at 50% 20%, #092624 0%, #061716 55%, #030b0a 100%);
+  background: radial-gradient(ellipse at 50% 15%, #0f766e 0%, #0d5c56 35%, #0a4642 65%, #062b28 100%);
   min-height: auto;
-  padding-top: 5rem;
-  padding-bottom: 4rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
 }
 
 @media (min-width: 640px) {
   .statement-section {
-    min-height: 100vh;
+    min-height: calc(100vh - 68px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 6.5rem;
-    padding-bottom: 5.5rem;
+    padding-top: 1rem;
+    padding-bottom: 2.5rem;
   }
 }
 
 .statement-inner {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 @media (min-width: 640px) {
   .statement-inner {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
   }
 }
 
@@ -653,10 +653,18 @@ html {
   border-radius: 0.375rem;
   background-color: rgba(240, 100, 48, 0.22);
   color: #F06430;
-  padding: 0.15rem 0.55rem;
+  padding: 0.2rem 0.65rem;
   font-weight: 800;
   border: 1px solid rgba(240, 100, 48, 0.35);
   box-shadow: 0 0 14px rgba(240, 100, 48, 0.15);
+  transition: all 0.25s ease;
+}
+
+.chip-highlight:hover {
+  background-color: rgba(240, 100, 48, 0.32);
+  border-color: rgba(240, 100, 48, 0.6);
+  box-shadow: 0 0 18px rgba(240, 100, 48, 0.3);
+  transform: translateY(-1px);
 }
 
 .statement-lead {
@@ -738,7 +746,7 @@ html {
   font-size: 0.95rem !important;
   padding: 0.5rem 1rem !important;
   border-radius: 9999px !important;
-  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease !important;
   display: inline-flex !important;
   align-items: center !important;
   text-decoration: none !important;

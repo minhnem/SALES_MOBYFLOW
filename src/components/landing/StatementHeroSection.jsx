@@ -5,6 +5,9 @@ import {
   PlayCircleOutlined,
   StarFilled,
   ArrowDownOutlined,
+  SyncOutlined,
+  HeartOutlined,
+  GiftOutlined,
 } from '@ant-design/icons';
 import TechGridBackground from './TechGridBackground';
 
@@ -24,10 +27,12 @@ const StatementCursor = () => {
     }
 
     const waypoints = [
-      { x: 48, y: 38, text: 'MOBYFLOW' },
-      { x: 30, y: 48, text: 'CHU KỲ BỈM SỮA' },
-      { x: 68, y: 56, text: 'ZALO ZNS TÍCH VÀNG' },
-      { x: 52, y: 70, text: 'ĐỒNG BỘ KIOTVIET' },
+      { x: 50, y: 36, text: 'MOBYFLOW' },
+      { x: 28, y: 48, text: 'CHU KỲ BỈM SỮA' },
+      { x: 50, y: 49, text: 'VÒNG ĐỜI MẸ & BÉ' },
+      { x: 72, y: 48, text: 'CHIẾN DỊCH THÁNG' },
+      { x: 64, y: 64, text: 'ZALO ZNS TÍCH VÀNG' },
+      { x: 36, y: 64, text: 'ĐỒNG BỘ KIOTVIET' },
     ];
 
     let step = 0;
@@ -123,7 +128,7 @@ const StatementHeroSection = ({ onOpenTrial }) => {
   };
 
   return (
-    <section id="statement-hero" className="statement-section relative overflow-hidden">
+    <section id="statement-hero" className="statement-section relative overflow-hidden" style={{ paddingTop: '6rem' }}>
       {/* 1. Lưới công nghệ Tech-grid + Hạt sáng chạy + Vầng sáng mờ lớn */}
       <TechGridBackground variant="dark" />
 
@@ -133,9 +138,9 @@ const StatementHeroSection = ({ onOpenTrial }) => {
       {/* 3. Nội dung trung tâm Statement khổ lớn */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="statement-inner mx-auto flex flex-col items-center text-center">
-          
+
           {/* Tagline định vị nhỏ phía trên */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 backdrop-blur-md mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-teal-500/30 bg-teal-500/10 backdrop-blur-md mb-4 sm:mb-5">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-xs sm:text-sm font-bold tracking-wide uppercase text-teal-300">
               Giải Pháp Tự Động Hóa Chăm Sóc Chu Kỳ Tiêu Dùng
@@ -143,33 +148,42 @@ const StatementHeroSection = ({ onOpenTrial }) => {
           </div>
 
           {/* Dòng tiêu đề STATEMENT Khổng Lồ 3 Dòng */}
-          <h1 className="statement-title mb-4 sm:mb-6 font-black tracking-tight text-white uppercase transition-colors duration-500">
+          <h1 className="statement-title mb-3 sm:mb-4 font-black tracking-tight text-white uppercase transition-colors duration-500">
             <LetterRiseLine text="MOBYFLOW LÀ CÁCH" startIdx={0} />
             <LetterRiseLine text="SHOP MẸ & BÉ GIỮ CHÂN KHÁCH HÀNG" startIdx={17} />
             <LetterRiseLine text="TỰ ĐỘNG HƠN, BỀN VỮNG HƠN" startIdx={52} isAccent />
           </h1>
 
-          {/* Subtitle in hoa với chip-highlight */}
-          <p className="statement-sub mb-4 font-bold text-white/90 uppercase tracking-wide sm:mb-6">
-            Ứng dụng{' '}
-            <span className="chip-highlight mx-1">
-              Công nghệ Chu kỳ Bỉm Sữa
-            </span>{' '}
-            vào Tự động hóa Zalo ZNS và kết nối KiotViet
-          </p>
+          {/* Subtitle 3 chức năng chủ đạo kết hợp Zalo ZNS & KiotViet */}
+          <div className="mb-3.5 sm:mb-4 max-w-4xl">
+            <p className="statement-sub mb-2.5 sm:mb-3 font-bold text-white/90 uppercase tracking-wide">
+              Bộ 3 kịch bản tự động hóa qua{' '}
+              <span className="text-teal-300 font-extrabold">Zalo ZNS</span> &amp;{' '}
+              <span className="text-sky-300 font-extrabold">KiotViet</span>:
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+              <span className="chip-highlight text-xs sm:text-sm tracking-wide">
+                <SyncOutlined className="mr-1.5 text-xs text-[#F06430]" />
+                1. Chu kỳ bỉm sữa
+              </span>
+              <span className="chip-highlight text-xs sm:text-sm tracking-wide">
+                <HeartOutlined className="mr-1.5 text-xs text-[#F06430]" />
+                2. Vòng đời Mẹ Bầu &amp; Bé
+              </span>
+              <span className="chip-highlight text-xs sm:text-sm tracking-wide">
+                <GiftOutlined className="mr-1.5 text-xs text-[#F06430]" />
+                3. Chiến dịch tháng
+              </span>
+            </div>
+          </div>
 
-          {/* Đoạn mô tả Lead ngắn gọn */}
-          <p className="statement-lead mb-8 leading-relaxed text-white/75 sm:mb-10 sm:max-w-3xl">
-            <span className="statement-lead-line">
-              MobyFlow là hệ sinh thái giải pháp tự động hóa chuyên sâu cho ngành Mẹ & Bé,
-            </span>{' '}
-            <span className="statement-lead-line">
-              giúp cửa hàng gia tăng tỷ lệ khách quen tái mua hàng đột phá mà không tốn công nhân sự gọi điện nhắn tin.
-            </span>
+          {/* Đoạn mô tả Lead ngắn gọn súc tích bao hàm 3 chức năng */}
+          <p className="statement-lead mb-6 sm:mb-7 leading-relaxed text-white/80 sm:max-w-2xl">
+            Tự động tính chu kỳ hết bỉm sữa, đồng hành từng cột mốc bé 0-36 tháng và kích hoạt ưu đãi tháng — giúp Shop Mẹ &amp; Bé giữ chân khách hàng và nhân đôi doanh thu tái mua.
           </p>
 
           {/* Cụm 2 nút Kêu gọi hành động (CTA kép cao cấp) */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-9 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 sm:mb-7 w-full sm:w-auto">
             <Button
               id="btn-statement-trial"
               type="primary"
@@ -194,7 +208,7 @@ const StatementHeroSection = ({ onOpenTrial }) => {
           </div>
 
           {/* Đánh giá Social Proof 4.9 Sao */}
-          <div className="mb-6 flex flex-col items-center gap-1.5 sm:mb-8">
+          <div className="mb-5 sm:mb-6 flex flex-col items-center gap-1.5">
             <div className="flex items-center gap-2">
               <div className="flex gap-1 text-[0.85rem] text-[#FFB800] sm:text-[1.15rem]">
                 <StarFilled />
@@ -216,23 +230,23 @@ const StatementHeroSection = ({ onOpenTrial }) => {
           <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 py-1.5 pr-4 pl-2 backdrop-blur-md sm:gap-3 sm:py-2 sm:pr-5 sm:pl-2.5 shadow-lg">
             <div className="flex -space-x-2">
               {/* Zalo Icon Badge */}
-              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0b0f0a] bg-[#0068ff] text-white text-[10px] font-black">
+              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0a3835] bg-[#0068ff] text-white text-[10px] font-black">
                 Zalo
               </span>
               {/* KiotViet Icon Badge */}
-              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0b0f0a] bg-blue-600 text-white text-[10px] font-black">
+              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0a3835] bg-blue-600 text-white text-[10px] font-black">
                 KV
               </span>
               {/* ZNS Gold Badge */}
-              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0b0f0a] bg-amber-500 text-white text-[10px] font-bold">
+              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0a3835] bg-amber-500 text-white text-[10px] font-bold">
                 ZNS
               </span>
               {/* MobyFlow Teal Badge */}
-              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0b0f0a] bg-[#139091] text-white text-[10px] font-bold">
+              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0a3835] bg-[#139091] text-white text-[10px] font-bold">
                 AUTO
               </span>
               {/* Orange Accent */}
-              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0b0f0a] bg-[#F06430] text-white text-[10px] font-bold">
+              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0a3835] bg-[#F06430] text-white text-[10px] font-bold">
                 24/7
               </span>
             </div>

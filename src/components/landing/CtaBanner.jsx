@@ -30,10 +30,8 @@ const CtaBanner = ({ onOpenTrial }) => {
                 <RevealText text="quay lại mua hàng?" startDelay={0.5} flash />
               </h2>
 
-              <p className="text-base sm:text-lg text-teal-100 max-w-2xl mx-auto mb-8 leading-relaxed">
-                Đừng để khách hàng thân thiết tiện tay mua sữa bỉm ở nơi khác,{' '}
-                <br className="hidden md:inline" />
-                kết nối KiotViet và tự động chăm sóc qua Zalo ZNS ngay hôm nay!
+              <p className="text-base sm:text-lg text-teal-100 max-w-xl mx-auto mb-8">
+                Kết nối KiotViet và kích hoạt Zalo ZNS chăm sóc chu kỳ để giữ chân khách quen ngay hôm nay.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">

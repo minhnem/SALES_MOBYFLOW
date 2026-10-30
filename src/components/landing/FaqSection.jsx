@@ -5,56 +5,46 @@ import { Collapse } from 'antd';
 const faqs = [
   {
     key: '1',
-    label: 'Shop tôi đang dùng phần mềm KiotViet thì kết nối với MobyFlow như thế nào?',
+    label: 'Kết nối KiotViet với MobyFlow như thế nào?',
     children: (
       <p className="text-sm sm:text-base text-gray-600 leading-relaxed m-0">
-        Chỉ mất đúng 30 giây! Bạn chỉ cần vào mục Cài đặt trên MobyFlow, nhập Client ID & Secret từ KiotViet.
-        Toàn bộ danh sách khách hàng, lịch sử hóa đơn mua bỉm sữa và danh mục sản phẩm sẽ tự động đồng bộ sang
-        MobyFlow theo thời gian thực mà bạn không cần phải xuất nhập file thủ công.
+        Chỉ mất 30 giây! Nhập <strong>Client ID &amp; Secret</strong> từ KiotViet vào mục Cài đặt. Toàn bộ khách hàng, hóa đơn và sản phẩm sẽ tự động đồng bộ thời gian thực.
       </p>
     ),
   },
   {
     key: '2',
-    label: 'Gửi tin nhắn Zalo ZNS có bị khóa nick hay báo spam như Zalo cá nhân không?',
+    label: 'Gửi tin Zalo ZNS có bị khóa nick hay báo spam không?',
     children: (
       <p className="text-sm sm:text-base text-gray-600 leading-relaxed m-0">
-        Tuyệt đối KHÔNG! ZNS (Zalo Notification Service) là giải pháp tin nhắn chăm sóc khách hàng chính thức từ
-        Zalo Doanh Nghiệp (Zalo OA có tích vàng). Mọi tin nhắn đều được Zalo phê duyệt trước, gửi thẳng đến hộp thư
-        Zalo cá nhân của mẹ bỉm với tỷ lệ mở đọc lên tới 98.5%, bảo mật tuyệt đối và không bao giờ lo bị khóa tài khoản.
+        Không! Zalo ZNS là dịch vụ tin nhắn chính thức từ <strong>Zalo OA tích vàng</strong>, được Zalo kiểm duyệt trước. Tỷ lệ mở đọc đạt 98.5% và không bao giờ lo bị khóa tài khoản.
       </p>
     ),
   },
   {
     key: '3',
-    label: 'MobyFlow tính toán chu kỳ tiêu dùng sữa bỉm của bé như thế nào?',
+    label: 'MobyFlow tính toán chu kỳ tiêu dùng sữa bỉm như thế nào?',
     children: (
       <p className="text-sm sm:text-base text-gray-600 leading-relaxed m-0">
-        Bạn chỉ cần thiết lập số ngày tiêu hao trong mục "Sản phẩm & Chu kỳ": Ví dụ lon sữa 800g bé dùng trong 12-14 ngày,
-        bịch bỉm 64 miếng dùng trong 18 ngày. Khi có đơn hàng từ KiotViet, MobyFlow tự động kích hoạt bộ đếm ngược.
-        Trước khi bé hết hàng 2-3 ngày, hệ thống sẽ tự động gửi tin nhắc mẹ đặt hàng để kịp nhận sữa mới cho con.
+        Bạn chỉ cần cài số ngày dùng (VD: lon sữa = 12-14 ngày, bịch bỉm = 18 ngày). Hệ thống tự động đếm ngược từ ngày mua và gửi tin nhắc mẹ trước 2-3 ngày khi sắp hết hàng.
       </p>
     ),
   },
   {
     key: '4',
-    label: 'Bé lớn lên cần đổi size bỉm hoặc đổi số sữa, MobyFlow có tự nhận diện được không?',
+    label: 'Bé lớn lên đổi số sữa hoặc tăng size bỉm thì sao?',
     children: (
       <p className="text-sm sm:text-base text-gray-600 leading-relaxed m-0">
-        Có! MobyFlow có tính năng theo dõi tháng tuổi của bé. Khi bé đạt mốc 6 tháng tuổi, hệ thống sẽ tự động nhắc
-        mẹ đổi từ sữa số 1 sang số 2, hoặc khi bé đạt cân nặng tương ứng sẽ nhắc mẹ tăng từ bỉm size S lên size M.
-        Điều này giúp shop chăm sóc khách hàng cực kỳ tinh tế và chuyên nghiệp.
+        Hệ thống tự nhận diện theo tháng tuổi của bé: tự động nhắc mẹ đổi sữa số 2 khi bé tròn 6 tháng, gợi ý combo ăn dặm hoặc đổi size bỉm dán sang bỉm quần đúng lúc.
       </p>
     ),
   },
   {
     key: '5',
-    label: 'Nếu shop tôi đang lưu data khách hàng trên file Excel thì có dùng được không?',
+    label: 'Shop đang quản lý data trên file Excel có dùng được không?',
     children: (
       <p className="text-sm sm:text-base text-gray-600 leading-relaxed m-0">
-        Hoàn toàn được! MobyFlow trang bị sẵn tính năng nhập file Excel (.xlsx, .xls) không giới hạn số lượng dòng.
-        Bạn có thể tải file danh sách khách hàng lên hệ thống trong 1 phút, MobyFlow sẽ tự động phân loại và đưa vào
-        các chiến dịch chăm sóc tự động ngay lập tức.
+        Hoàn toàn được! MobyFlow hỗ trợ nhập file Excel (.xlsx, .xls) không giới hạn dòng, tự động phân nhóm và kích hoạt lịch chăm sóc tự động ngay trong 1 phút.
       </p>
     ),
   },

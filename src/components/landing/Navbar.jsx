@@ -13,10 +13,25 @@ const Navbar = ({ onOpenTrial }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          // Ngưỡng cuộn mượt mà có hysteresis đệm chống giật & chớp nháy
+          if (scrollY > 100) {
+            setScrolled(true);
+          } else if (scrollY < 40) {
+            setScrolled(false);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -59,28 +74,23 @@ const Navbar = ({ onOpenTrial }) => {
         </div>
       </div> */}
 
-      {/* Main Sticky Navbar */}
+      {/* Main Sticky Navbar - Fixed Height Không Gây Giật Layout */}
       <header
         id="landing-header"
-        className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100 py-3'
-          : 'bg-[#051312]/85 backdrop-blur-md border-b border-teal-500/20 shadow-xl shadow-black/30 py-3.5'
-          }`}
+        className={`sticky top-0 z-50 h-16 sm:h-[68px] flex items-center transition-[background-color,border-color,box-shadow] duration-300 ease-out ${
+          scrolled
+            ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100'
+            : 'bg-[#0a3835]/90 backdrop-blur-md border-b border-teal-400/20 shadow-lg shadow-teal-950/20'
+        }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo */}
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          {/* Logo với khung cố định kích thước chống dịch chuyển */}
           <Link
             id="link-landing-logo"
             href="/"
-            className="flex items-center no-underline group py-1"
+            className="flex items-center no-underline group"
           >
-            <div
-              className={`flex items-center transition-all duration-200 ${
-                !scrolled
-                  ? 'px-3.5 py-1.5 rounded-full bg-white/95 shadow-md shadow-black/30 border border-white/50 group-hover:scale-105 group-hover:bg-white'
-                  : 'group-hover:scale-105'
-              }`}
-            >
+            <div className="flex items-center px-3 py-1.5 rounded-full bg-white/95 shadow-sm border border-white/50 group-hover:scale-105 group-hover:bg-white transition-transform duration-200">
               <img
                 src="/images/logo mobyflow2-01.png"
                 alt="MOBYFLOW - Mom Baby Flow"

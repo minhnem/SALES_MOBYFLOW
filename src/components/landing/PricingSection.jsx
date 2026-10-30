@@ -7,62 +7,51 @@ const PricingSection = ({ onOpenTrial }) => {
   const plans = [
     {
       name: 'Gói Dùng Thử',
-      tagline: 'Phù hợp cho shop mẹ & bé trải nghiệm tính năng nhắc chu kỳ tiêu dùng',
+      tagline: 'Trải nghiệm tính năng tự động đếm chu kỳ bỉm sữa cơ bản',
       price: 'XXX.XXX',
-      billing: 'Thanh toán trọn gói theo năm (Tiết kiệm 20%)',
+      billing: 'Thanh toán theo năm (Tiết kiệm 20%)',
       popular: false,
       features: [
-        'Chỉ có Chức năng 1: Nhắc mua hàng theo chu kỳ bỉm sữa',
-        'Tự động đếm ngày hết bỉm, sữa & kích hoạt ZNS nhắc mẹ',
-        'Quản lý không giới hạn sản phẩm & cài đặt chu kỳ dùng',
-        'Kết nối và đồng bộ dữ liệu với KiotViet',
-        'Hỗ trợ nhập danh sách khách hàng từ file Excel',
-        'Phân quyền nhân viên',
-        'Báo cáo thống kê gửi tin',
+        'Nhắc mua lại theo chu kỳ bỉm sữa tự động',
+        'Tự đếm ngày hết hàng & kích hoạt Zalo ZNS nhắc mẹ',
+        'Cài đặt không giới hạn chu kỳ sản phẩm',
+        'Đồng bộ KiotViet & nhập file Excel 1-click',
+        'Phân quyền nhân viên & báo cáo gửi tin',
       ],
-      ctaText: 'Đăng ký dùng thử 14 ngày miễn phí',
+      ctaText: 'Đăng ký dùng thử 14 ngày',
       btnType: 'default',
     },
     {
       name: 'Gói Phát Triển',
-      tagline: 'Tăng tốc doanh số và chăm sóc trọn vẹn: Thai kỳ ➔ Mẹ bầu ➔ Bé lớn',
+      tagline: 'Chăm sóc trọn vẹn: Thai kỳ ➔ Mẹ bầu ➔ Bé 36 tháng',
       price: 'XXX.XXX',
-      billing: 'Thanh toán trọn gói theo năm (Tiết kiệm 20%)',
+      billing: 'Thanh toán theo năm (Tiết kiệm 20%)',
       popular: true,
       badge: 'Khuyên Dùng Cho Shop Mẹ & Bé',
       features: [
-        'Bao gồm Chức năng 1. Nhắc mua hàng theo chu kỳ tiêu dùng bỉm sữa',
-        'Thêm Chức năng 2: Chăm sóc theo vòng đời Mẹ Bầu (thai kỳ, giỏ đồ đi sinh) & Bé (0 - 36 tháng)',
-        'Tự động đếm ngày hết bỉm, sữa & kích hoạt ZNS nhắc mẹ',
-        'Tự động nhắc tuần thai mẹ bầu, giỏ đồ đi sinh, đổi số sữa, ăn dặm & vi chất',
-        'Tự động phân nhóm khách theo độ tuổi bé & chu kỳ mua',
-        'Quản lý không giới hạn sản phẩm & cài đặt chu kỳ dùng',
-        'Kết nối và đồng bộ dữ liệu với KiotViet',
-        'Hỗ trợ nhập danh sách khách hàng từ file Excel',
-        'Phân quyền nhân viên',
-        'Báo cáo chi tiết tỷ lệ gửi tin',
+        'Bao gồm toàn bộ tính năng Gói Dùng Thử',
+        'Chăm sóc vòng đời Mẹ Bầu & Bé (0 - 36 tháng)',
+        'Tự nhắc tuần thai, giỏ đồ đi sinh, đổi số sữa & ăn dặm',
+        'Tự động phân nhóm khách theo tháng tuổi của bé',
+        'Báo cáo chi tiết tỷ lệ chuyển đổi đơn hàng',
+        'Hỗ trợ kỹ thuật 1 - 1 trực tiếp',
       ],
       ctaText: 'Đăng ký nhận tư vấn',
       btnType: 'primary',
     },
     {
       name: 'Gói Pro',
-      tagline: 'Giải pháp cao cấp nhất với trọn bộ cả 3 tính năng chăm sóc chủ đạo',
+      tagline: 'Giải pháp cao cấp nhất với trọn bộ cả 3 kịch bản chăm sóc',
       price: 'X.XXX.XXX',
-      billing: 'Thanh toán trọn gói theo năm (Tiết kiệm 20%)',
+      billing: 'Thanh toán theo năm (Tiết kiệm 20%)',
       popular: false,
       features: [
-        'Bao gồm Chức năng 1. Nhắc mua hàng theo chu kỳ tiêu dùng bỉm sữa',
-        'Bao gồm Chức năng 2. Chăm sóc theo vòng đời Mẹ Bầu (thai kỳ, giỏ đồ đi sinh) & Bé (0 - 36 tháng)',
-        'Bao gồm Chức năng 3. Chiến dịch gửi tin nhắn theo sự kiện tháng',
-        'Tự động đếm ngày hết bỉm, sữa & kích hoạt ZNS nhắc mẹ',
-        'Tự động nhắc tuần thai mẹ bầu, giỏ đồ đi sinh, đổi số sữa, ăn dặm & vi chất',
-        'Tự động phân nhóm khách theo độ tuổi bé & chu kỳ mua',
-        'Quản lý không giới hạn sản phẩm & cài đặt chu kỳ dùng',
-        'Kết nối và đồng bộ dữ liệu với KiotViet',
-        'Hỗ trợ nhập danh sách khách hàng từ file Excel',
-        'Phân quyền nhân viên',
-        'Báo cáo chi tiết tỷ lệ gửi tin',
+        'Bao gồm toàn bộ tính năng Gói Phát Triển',
+        'Chiến dịch ưu đãi định kỳ tháng & sinh nhật mẹ/bé',
+        'Tự động kích hoạt Ngày hội thành viên, Sale ngày đôi',
+        'Chiến dịch kéo khách cũ "ngủ quên" quay lại',
+        'Báo cáo đối soát doanh thu & chỉ số ROI tự động',
+        'Hỗ trợ setup kịch bản chuyên sâu theo yêu cầu',
       ],
       ctaText: 'Đăng ký nhận tư vấn',
       btnType: 'default',
@@ -73,21 +62,19 @@ const PricingSection = ({ onOpenTrial }) => {
     <section id="pricing" className="py-20 bg-slate-50/70 border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up">
-          <div className="text-center max-w-4xl mx-auto mb-12">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#139091] bg-teal-50 px-3 py-1 rounded-full inline-block">
-              Bảng Giá Đầu Tư Hiệu Quả
+              Bảng Giá Đầu Tư
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
-              Chi phí cực nhỏ - Giữ chân trọn đời mẹ bỉm sữa
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight mt-2 mb-3">
+              Gói dịch vụ phù hợp cho mọi quy mô cửa hàng
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              Chỉ từ vài ngàn đồng một ngày để sở hữu hệ thống tự động hóa,{' '}
-              <br className="hidden md:inline" />
-              mang lại hàng chục triệu doanh số tái mua mỗi tháng.
+            <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto">
+              Chi phí cực nhỏ, mang lại hàng chục triệu doanh số tái mua mỗi tháng.
             </p>
 
             {/* Badge thông báo gói thanh toán năm ưu đãi */}
-            <div className="mt-7 inline-flex items-center gap-2 bg-white px-4 py-2 rounded-2xl border border-gray-200/90 shadow-2xs">
+            <div className="mt-5 inline-flex items-center gap-2 bg-white px-4 py-2 rounded-2xl border border-gray-200/90 shadow-2xs">
               <span className="bg-amber-400 text-slate-950 text-[10px] sm:text-xs font-black px-2 py-0.5 rounded-md uppercase tracking-wider">
                 TIẾT KIỆM 20%
               </span>
