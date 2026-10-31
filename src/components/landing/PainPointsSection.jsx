@@ -7,10 +7,7 @@ import {
   Link2,
   Database,
   AlertTriangle,
-  RefreshCw,
-  Heart,
   ChevronDown,
-  ChevronRight,
 } from 'lucide-react';
 
 /**
@@ -117,136 +114,6 @@ const MoonAndStar3D = ({ className = '' }) => (
   </svg>
 );
 
-/**
- * 3D Clipboard Illustration (Bảng kẹp hồ sơ với dấu ❌ 3D nổi bật)
- */
-const Clipboard3D = ({ className = '' }) => (
-  <svg
-    viewBox="0 0 160 170"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    aria-hidden="true"
-  >
-    <defs>
-      <linearGradient id="clipBoardGrad" x1="20" y1="10" x2="140" y2="160" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#fecdd3" />
-        <stop offset="50%" stopColor="#fda4af" />
-        <stop offset="100%" stopColor="#fb7185" />
-      </linearGradient>
-      <linearGradient id="clipPaperGrad" x1="30" y1="20" x2="120" y2="150" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#ffffff" />
-        <stop offset="100%" stopColor="#f8fafc" />
-      </linearGradient>
-      <linearGradient id="crossBadgeGrad" x1="90" y1="100" x2="145" y2="155" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#fb7185" />
-        <stop offset="50%" stopColor="#f43f5e" />
-        <stop offset="100%" stopColor="#e11d48" />
-      </linearGradient>
-      <filter id="cbShadow" x="-20%" y="-10%" width="140%" height="130%">
-        <feDropShadow dx="2" dy="10" stdDeviation="10" floodColor="#f43f5e" floodOpacity="0.25" />
-      </filter>
-    </defs>
-    <g filter="url(#cbShadow)">
-      {/* Thân bảng kẹp */}
-      <rect x="22" y="16" width="104" height="138" rx="14" fill="url(#clipBoardGrad)" />
-      {/* Kẹp kim loại hồng trên cùng */}
-      <rect x="52" y="8" width="44" height="18" rx="6" fill="#f43f5e" />
-      <circle cx="74" cy="17" r="4" fill="#ffffff" opacity="0.8" />
-      {/* Tờ giấy kiểm tra trắng */}
-      <rect x="32" y="28" width="84" height="116" rx="8" fill="url(#clipPaperGrad)" />
-
-      {/* 4 dòng gạch đầu dòng có dấu x */}
-      <rect x="42" y="44" width="12" height="12" rx="3" fill="#ffe4e6" stroke="#f43f5e" strokeWidth="1.5" />
-      <path d="M45 47 L51 53 M51 47 L45 53" stroke="#f43f5e" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="60" y1="50" x2="104" y2="50" stroke="#fda4af" strokeWidth="3" strokeLinecap="round" />
-
-      <rect x="42" y="66" width="12" height="12" rx="3" fill="#ffe4e6" stroke="#f43f5e" strokeWidth="1.5" />
-      <path d="M45 69 L51 75 M51 69 L45 75" stroke="#f43f5e" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="60" y1="72" x2="98" y2="72" stroke="#fda4af" strokeWidth="3" strokeLinecap="round" />
-
-      <rect x="42" y="88" width="12" height="12" rx="3" fill="#ffe4e6" stroke="#f43f5e" strokeWidth="1.5" />
-      <path d="M45 91 L51 97 M51 91 L45 97" stroke="#f43f5e" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="60" y1="94" x2="102" y2="94" stroke="#fda4af" strokeWidth="3" strokeLinecap="round" />
-
-      <rect x="42" y="110" width="12" height="12" rx="3" fill="#ffe4e6" stroke="#f43f5e" strokeWidth="1.5" />
-      <path d="M45 113 L51 119 M51 113 L45 119" stroke="#f43f5e" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="60" y1="116" x2="92" y2="116" stroke="#fda4af" strokeWidth="3" strokeLinecap="round" />
-
-      {/* Huy hiệu 3D Tròn Đỏ có chữ X Trắng nổi bật */}
-      <circle cx="120" cy="128" r="24" fill="url(#crossBadgeGrad)" />
-      <circle cx="120" cy="128" r="22" stroke="#ffffff" strokeWidth="2" opacity="0.6" fill="none" />
-      <path d="M110 118 L130 138 M130 118 L110 138" stroke="#ffffff" strokeWidth="4.5" strokeLinecap="round" />
-    </g>
-  </svg>
-);
-
-/**
- * 3D Laptop Illustration (Laptop công nghệ biểu đồ với dấu ✔ 3D & sao lấp lánh)
- */
-const Laptop3D = ({ className = '' }) => (
-  <svg
-    viewBox="0 0 180 170"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    aria-hidden="true"
-  >
-    <defs>
-      <linearGradient id="laptopScreenGrad" x1="30" y1="20" x2="150" y2="110" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#f8fafc" />
-        <stop offset="100%" stopColor="#e2e8f0" />
-      </linearGradient>
-      <linearGradient id="laptopBodyGrad" x1="10" y1="110" x2="170" y2="135" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#cbd5e1" />
-        <stop offset="50%" stopColor="#94a3b8" />
-        <stop offset="100%" stopColor="#64748b" />
-      </linearGradient>
-      <linearGradient id="checkBadgeGrad" x1="120" y1="110" x2="170" y2="160" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#34d399" />
-        <stop offset="50%" stopColor="#10b981" />
-        <stop offset="100%" stopColor="#059669" />
-      </linearGradient>
-      <filter id="lpShadow" x="-20%" y="-10%" width="140%" height="130%">
-        <feDropShadow dx="2" dy="10" stdDeviation="12" floodColor="#10b981" floodOpacity="0.25" />
-      </filter>
-    </defs>
-    <g filter="url(#lpShadow)">
-      {/* Khung màn hình Laptop */}
-      <rect x="30" y="24" width="118" height="82" rx="8" fill="#1e293b" />
-      {/* Màn hình hiển thị sáng */}
-      <rect x="34" y="28" width="110" height="74" rx="5" fill="url(#laptopScreenGrad)" />
-
-      {/* Biểu đồ cột phân tích tăng trưởng */}
-      <rect x="42" y="36" width="34" height="12" rx="3" fill="#bae6fd" />
-      <rect x="80" y="36" width="28" height="12" rx="3" fill="#a7f3d0" />
-      <circle cx="132" cy="42" r="4" fill="#38bdf8" />
-
-      <rect x="94" y="68" width="7" height="24" rx="2" fill="#0ea5e9" />
-      <rect x="105" y="60" width="7" height="32" rx="2" fill="#0284c7" />
-      <rect x="116" y="52" width="7" height="40" rx="2" fill="#0369a1" />
-      <rect x="127" y="56" width="7" height="36" rx="2" fill="#38bdf8" />
-
-      {/* Thẻ đồ thị đường cong xanh */}
-      <rect x="42" y="56" width="44" height="36" rx="4" fill="#ffffff" stroke="#e2e8f0" strokeWidth="1" />
-      <path d="M46 80 Q56 68, 66 74 T82 62" stroke="#10b981" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-
-      {/* Bàn phím & Thân máy dưới */}
-      <path d="M18 106 L160 106 L172 122 C172 125, 168 127, 162 127 L16 127 C10 127, 6 125, 6 122 L18 106 Z" fill="url(#laptopBodyGrad)" />
-      <rect x="74" y="107" width="30" height="4" rx="2" fill="#cbd5e1" />
-
-      {/* Ngôi sao lấp lánh vàng cam */}
-      <path d="M152 20 Q152 28, 160 28 Q152 28, 152 36 Q152 28, 144 28 Q152 28, 152 20 Z" fill="#f59e0b" />
-      <circle cx="166" cy="44" r="2.5" fill="#fbbf24" />
-
-      {/* Huy hiệu 3D Tròn Xanh có dấu Check Trắng */}
-      <circle cx="145" cy="132" r="22" fill="url(#checkBadgeGrad)" />
-      <circle cx="145" cy="132" r="20" stroke="#ffffff" strokeWidth="2" opacity="0.6" fill="none" />
-      <path d="M136 132 L143 139 L155 125" stroke="#ffffff" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-    </g>
-  </svg>
-);
-
 const painPoints = [
   {
     icon: <Timer className="w-6 h-6 text-blue-500" strokeWidth={2.2} />,
@@ -268,7 +135,7 @@ const painPoints = [
   },
   {
     icon: <Gift className="w-6 h-6 text-pink-500" strokeWidth={2.2} />,
-    title: 'Thiếu chiến dịch định kỳ hàng tháng',
+    title: 'Thiếu chiến dịch định kỳ tháng',
     desc: 'Quên ngày sinh nhật bé, không có Ngày hội thành viên. Khách cũ sau 60-90 ngày dần "ngủ quên" và không quay lại.',
     highlight: 'Hơn 40% khách rời đi',
     cardBg: 'bg-[#fff0f6]',
@@ -286,7 +153,7 @@ const painPoints = [
   },
   {
     icon: <Database className="w-6 h-6 text-sky-500" strokeWidth={2.2} />,
-    title: 'Data KiotViet bị "bỏ xó", lãng phí',
+    title: 'Data KiotViet bị "bỏ xó"',
     desc: 'Hàng ngàn SĐT khách hàng trên KiotViet chỉ dùng để in hóa đơn, không có công cụ tự động phân nhóm và remarketing.',
     highlight: 'Lãng phí kho tài sản khách hàng',
     cardBg: 'bg-[#f0f9ff]',
@@ -295,7 +162,7 @@ const painPoints = [
   },
   {
     icon: <AlertTriangle className="w-6 h-6 text-amber-500" strokeWidth={2.2} />,
-    title: 'Nhắn tin thủ công, dễ bị khóa Zalo',
+    title: 'Nhắn thủ công, dễ bị khóa Zalo',
     desc: 'Nhân viên tự nhắn Zalo cá nhân vừa tốn công, dễ sót khách, vừa có nguy cơ bị Zalo quét khóa tài khoản do spam.',
     highlight: 'Tốn chi phí nhân sự',
     cardBg: 'bg-[#fffdf0]',
@@ -304,71 +171,10 @@ const painPoints = [
   },
 ];
 
-// Danh sách các điểm so sánh
-const oldWayList = [
-  'Không theo dõi được chu kỳ tiêu dùng',
-  'Bỏ quên các mốc vòng đời Mẹ Bầu & Bé',
-  'Bỏ lỡ sự kiện định kỳ trong tháng',
-  'Quản trị thủ công, tốn nhân lực',
-];
-
-const mobyWayList = [
-  'Nhắc mua hàng theo chu kỳ',
-  'Chăm sóc theo vòng đời Mẹ Bầu & Bé toàn diện',
-  'Chiến dịch gửi tin nhắn theo sự kiện tháng',
-  'Hệ thống tự động vận hành 24/7 qua KiotViet',
-];
-
-// 3 Chức năng chăm sóc chủ đạo trên MobyFlow
-const coreFunctions = [
-  {
-    id: 1,
-    badge: 'Chức năng 1',
-    badgeColor: 'bg-teal-100/70 text-teal-700',
-    title: 'Nhắc mua hàng theo chu kỳ',
-    desc: 'Tự động tính toán lượng sữa bột, miếng bỉm còn lại và gửi ZNS trước 2-3 ngày, ngăn khách mua nơi khác khi cạn hàng.',
-    benefit: 'Giữ chân 85% khách hàng cũ',
-    cardBg: 'bg-[#f0fdfa]',
-    cardBorder: 'border-teal-100',
-    iconBg: 'bg-[#0f766e]',
-    icon: <RefreshCw className="w-6 h-6 text-white" strokeWidth={2.4} />,
-  },
-  {
-    id: 2,
-    badge: 'Chức năng 2',
-    badgeColor: 'bg-purple-100/70 text-purple-700',
-    title: 'Chăm sóc vòng đời Mẹ Bầu & Bé',
-    desc: 'Bao trọn 2 giai đoạn: Thai kỳ 9 tháng (vitamin bầu, gói đồ đi sinh) và Bé 0 - 36 tháng (đổi số sữa, ăn dặm & vui chơi).',
-    benefit: 'Đồng hành từ thai kỳ đến 3 tuổi',
-    cardBg: 'bg-[#faf5ff]',
-    cardBorder: 'border-purple-100',
-    iconBg: 'bg-[#8b5cf6]',
-    icon: <Heart className="w-6 h-6 text-white fill-current" strokeWidth={1} />,
-  },
-  {
-    id: 3,
-    badge: 'Chức năng 3',
-    badgeColor: 'bg-amber-100/70 text-amber-700',
-    title: 'Chiến dịch tin nhắn theo sự kiện tháng',
-    desc: 'Kích hoạt ngày hội thành viên định kỳ, chúc mừng sinh nhật mẹ & bé, siêu sale ngày đôi kéo khách quay lại.',
-    benefit: 'Tăng 35% doanh số từ khách quen',
-    cardBg: 'bg-[#fffbf0]',
-    cardBorder: 'border-amber-100',
-    iconBg: 'bg-[#f97316]',
-    icon: <Gift className="w-6 h-6 text-white" strokeWidth={2.4} />,
-  },
-];
-
+// PainPointsSection - 6 Nỗi đau thực tế khiến shop mẹ & bé hụt 30-50% doanh thu
 const PainPointsSection = () => {
   // Quản lý accordion bung mở mô tả 6 thẻ nỗi đau trên điện thoại
   const [expandedIdx, setExpandedIdx] = useState(null);
-
-  // Quản lý collapse 2 cột so sánh trên mobile
-  const [mobileOldOpen, setMobileOldOpen] = useState(false);
-  const [mobileMobyOpen, setMobileMobyOpen] = useState(true);
-
-  // Quản lý accordion 3 chức năng chủ đạo trên mobile
-  const [expandedCoreIdx, setExpandedCoreIdx] = useState(null);
 
   return (
     <section
@@ -426,22 +232,23 @@ const PainPointsSection = () => {
 
         {/* Header Tiêu Đề Nỗi Đau */}
         <ScrollReveal direction="up">
-          <div className="text-center max-w-3xl mx-auto mb-7 sm:mb-9">
+          <div className="text-center max-w-3xl lg:max-w-4xl mx-auto mb-8 sm:mb-10">
 
             {/* Tag Cảnh Báo Nổi Bật Dành Cho Shop Mẹ & Bé */}
-            <div className="inline-flex items-center gap-2 bg-rose-50 text-rose-600 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-3 border border-rose-200/80 shadow-xs">
-              <span className="text-sm">⚠️</span>
+            <div className="inline-flex items-center gap-2 bg-rose-50 text-rose-600 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-3.5 sm:mb-4 border border-rose-200/80 shadow-xs">
+              {/* <span className="text-sm">⚠️</span> */}
               <span className="hidden sm:inline">Nỗi Đau Nan Giải Của Hơn 90% Chủ Shop Mẹ &amp; Bé</span>
               <span className="sm:hidden">Hơn 90% Chủ Shop Mẹ &amp; Bé đang gặp những vấn đề này</span>
             </div>
 
-            {/* Tiêu đề chính H2 3 dòng với điểm nhấn chữ xanh ngọc */}
-            <h2 className="text-2xl sm:text-4xl lg:text-[40px] font-black text-slate-900 tracking-tight leading-[1.25] mb-3">
-              <span>Tại sao doanh thu Shop Mẹ &amp; Bé</span>
-              <br />
-              <span className="text-[#139091]">mãi dậm chân tại chỗ</span>
-              <br />
-              <span>dù bán cả ngàn đơn?</span>
+            {/* Tiêu đề chính H2: Desktop hiển thị đúng 2 dòng thoáng đãng, Mobile hiển thị 3 dòng súc tích */}
+            <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-black text-slate-900 tracking-tight leading-[1.4] sm:leading-[1.48] mb-4 sm:mb-5">
+              <span>Tại sao doanh thu <span className="whitespace-nowrap">Shop Mẹ &amp; Bé</span></span>
+              <br className="hidden sm:inline" />
+              <span className="sm:hidden"><br /></span>
+              <span className="text-[#139091]">mãi dậm chân tại chỗ</span>{' '}
+              <br className="sm:hidden" />
+              <span className="whitespace-nowrap">dù bán cả ngàn đơn?</span>
             </h2>
 
             {/* Đoạn mô tả 3 điểm chạm then chốt */}
@@ -456,16 +263,19 @@ const PainPointsSection = () => {
           {painPoints.map((item, idx) => (
             <ScrollReveal key={idx} direction="up" delay={idx * 0.05}>
               <div
-                className={`rounded-3xl p-6 sm:p-7 border ${item.cardBorder} ${item.cardBg} shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.07)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full group`}
+                className={`rounded-3xl p-5 sm:p-6 border ${item.cardBorder} ${item.cardBg} shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.07)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full group`}
               >
                 <div>
-                  {/* Icon tròn trắng nổi trên nền thẻ pastel */}
-                  <div className="w-14 h-14 rounded-full bg-white shadow-xs flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                  {/* Icon tròn trắng nổi trên nền thẻ pastel (kích thước cố định tròn xoe không bị dãn ngang) */}
+                  <div className="w-14 h-14 rounded-full bg-white shadow-xs flex items-center justify-center mb-4 shrink-0 group-hover:scale-110 transition-transform duration-300">
                     {item.icon}
                   </div>
 
-                  {/* Tiêu đề nỗi đau */}
-                  <h3 className="text-lg sm:text-[19px] font-black text-slate-900 tracking-tight leading-snug mb-2.5">
+                  {/* Tiêu đề nỗi đau - Khóa chặt trên 1 dòng duy nhất */}
+                  <h3
+                    className="text-[15px] sm:text-base lg:text-[16px] xl:text-[17px] font-black text-slate-900 tracking-tight leading-snug mb-2.5 whitespace-nowrap overflow-hidden text-ellipsis"
+                    title={item.title}
+                  >
                     {item.title}
                   </h3>
 
@@ -475,10 +285,14 @@ const PainPointsSection = () => {
                   </p>
                 </div>
 
-                {/* Hậu quả / Tag cảnh báo viền đỏ mềm nền trắng */}
+                {/* Hậu quả / Tag cảnh báo viền đỏ mềm kèm icon X vector sắc nét chuẩn thiết kế */}
                 <div>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 text-rose-600 text-xs font-bold border border-rose-200/70 shadow-2xs">
-                    <span className="w-3.5 h-3.5 rounded-full bg-rose-500 text-white flex items-center justify-center text-[9px] font-black shrink-0">✕</span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-50/90 text-rose-600 text-xs font-bold border border-rose-200/80 shadow-2xs">
+                    <span className="w-4 h-4 rounded-full bg-[#ef4444] text-white flex items-center justify-center shrink-0 shadow-2xs">
+                      <svg className="w-2.5 h-2.5" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+                        <path d="M2.5 2.5L7.5 7.5M7.5 2.5L2.5 7.5" />
+                      </svg>
+                    </span>
                     <span>{item.highlight}</span>
                   </span>
                 </div>
@@ -506,8 +320,12 @@ const PainPointsSection = () => {
                       <h4 className="text-sm font-black text-slate-900 truncate mb-1">
                         {item.title}
                       </h4>
-                      <span className="inline-flex items-center gap-1 text-[11px] font-bold text-rose-600 bg-white/95 px-2.5 py-0.5 rounded-full border border-rose-200/60 shadow-2xs">
-                        <span className="w-3 h-3 rounded-full bg-rose-500 text-white flex items-center justify-center text-[8px] font-black shrink-0">✕</span>
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-rose-600 bg-rose-50/90 px-2.5 py-0.5 rounded-full border border-rose-200/70 shadow-2xs">
+                        <span className="w-3.5 h-3.5 rounded-full bg-[#ef4444] text-white flex items-center justify-center shrink-0 shadow-2xs">
+                          <svg className="w-2 h-2" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+                            <path d="M2.5 2.5L7.5 7.5M7.5 2.5L2.5 7.5" />
+                          </svg>
+                        </span>
                         <span>{item.highlight}</span>
                       </span>
                     </div>
@@ -533,292 +351,6 @@ const PainPointsSection = () => {
             );
           })}
         </div>
-
-        {/* ========================================================================= */}
-        {/* ========================================================================= */}
-        {/* 5. PHẦN SỰ KHÁC BIỆT KHI ÁP DỤNG MOBYFLOW (THIẾT KẾ ĐA SẮC ĐÚNG 100% ẢNH MẪU) */}
-        {/* ========================================================================= */}
-        <ScrollReveal direction="up" delay={0.15}>
-          <div className="bg-white rounded-[32px] sm:rounded-[44px] p-5 sm:p-8 lg:p-9 border border-slate-100 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.06)] relative overflow-hidden">
-
-            {/* Làn sóng hữu cơ Mint góc trên bên trái khung so sánh */}
-            <div className="hidden md:block absolute -top-12 -left-12 w-80 lg:w-96 h-72 lg:h-80 pointer-events-none z-0">
-              <svg viewBox="0 0 380 320" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <path d="M0 0 H260 C230 70 240 130 180 190 C120 250 60 270 0 280 V0 Z" fill="url(#cmpMintGrad)" />
-                <defs>
-                  <linearGradient id="cmpMintGrad" x1="0" y1="0" x2="260" y2="280" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#ccfbf1" stopOpacity="0.8" />
-                    <stop offset="50%" stopColor="#99f6e4" stopOpacity="0.4" />
-                    <stop offset="100%" stopColor="#e0f2fe" stopOpacity="0.1" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-
-            {/* Bảng kẹp 3D Clipboard với dấu ❌ tròn nổi bật */}
-            <div className="hidden md:block absolute top-8 lg:top-10 left-3 lg:left-6 w-24 lg:w-32 pointer-events-none z-10 anim-clipboard drop-shadow-lg">
-              <Clipboard3D className="w-full h-auto" />
-            </div>
-
-            {/* Làn sóng hữu cơ Cyan/Teal góc trên bên phải khung so sánh */}
-            <div className="hidden md:block absolute -top-10 -right-10 w-80 lg:w-96 h-72 lg:h-80 pointer-events-none z-0">
-              <svg viewBox="0 0 380 320" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <path d="M380 0 H120 C150 70 140 140 190 200 C240 250 310 270 380 270 V0 Z" fill="url(#cmpCyanGrad)" />
-                <defs>
-                  <linearGradient id="cmpCyanGrad" x1="380" y1="0" x2="120" y2="270" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#cffafe" stopOpacity="0.8" />
-                    <stop offset="50%" stopColor="#a5f3fc" stopOpacity="0.4" />
-                    <stop offset="100%" stopColor="#e0f2fe" stopOpacity="0.1" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-
-            {/* Laptop 3D biểu đồ với dấu ✔ tròn nổi bật */}
-            <div className="hidden md:block absolute top-6 lg:top-8 right-3 lg:right-6 w-30 lg:w-40 pointer-events-none z-10 anim-laptop drop-shadow-lg">
-              <Laptop3D className="w-full h-auto" />
-            </div>
-
-            {/* Header Mục Sự Khác Biệt */}
-            <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8 relative z-20">
-              <div className="inline-flex items-center px-4 py-1 rounded-full bg-cyan-50 border border-teal-200/60 text-[#139091] text-xs font-black uppercase tracking-wider mb-2.5 shadow-2xs">
-                Sự Khác Biệt
-              </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-[34px] font-black text-slate-900 tracking-tight leading-snug mb-2.5">
-                Sự Khác Biệt Khi Áp Dụng <span className="text-[#139091]">MobyFlow</span> Cho Shop Mẹ &amp; Bé
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl mx-auto m-0">
-                Chuyển đổi từ cách quản lý bị động sang tự động hóa toàn diện, chuyên sâu với <strong>3 chức năng chăm sóc chủ đạo</strong>.
-              </p>
-            </div>
-
-            {/* ================= DESKTOP VIEW: 2 CỘT SO SÁNH SONG SONG ================= */}
-            <div className="hidden md:grid md:grid-cols-2 gap-5 mb-8 relative z-20">
-
-              {/* Cột Trái: Cách Quản Trị Cũ (Hồng Pastel) */}
-              <div className="bg-[#fff5f5] rounded-3xl p-6 sm:p-7 border border-rose-100 shadow-xs relative overflow-hidden">
-                <div className="flex items-center gap-3 mb-5 pb-3.5 border-b border-rose-200/60">
-                  <div className="w-9 h-9 rounded-full bg-rose-500 text-white flex items-center justify-center font-black text-sm shrink-0 shadow-xs">
-                    ✕
-                  </div>
-                  <div>
-                    <h4 className="text-base sm:text-[17px] font-black text-rose-600 leading-tight m-0">
-                      Cách Quản Trị Cũ
-                    </h4>
-                    <span className="text-xs font-semibold text-rose-500/80">
-                      (Thủ Công &amp; Bị Động)
-                    </span>
-                  </div>
-                </div>
-
-                <ul className="space-y-3.5 list-none p-0 m-0 text-xs sm:text-sm text-slate-700">
-                  {oldWayList.map((text, i) => (
-                    <li key={i} className="flex items-center gap-3">
-                      <span className="text-rose-500 font-bold text-sm shrink-0">✕</span>
-                      <span className="font-medium text-slate-700">{text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Cột Phải: Giải Pháp MobyFlow (Xanh Mint Pastel) */}
-              <div className="bg-[#f0fdf9] rounded-3xl p-6 sm:p-7 border border-teal-100 shadow-xs relative overflow-hidden">
-                <div className="flex items-center gap-3 mb-5 pb-3.5 border-b border-teal-200/60">
-                  <div className="w-9 h-9 rounded-full bg-[#139091] text-white flex items-center justify-center font-black text-sm shrink-0 shadow-xs">
-                    ✓
-                  </div>
-                  <div>
-                    <h4 className="text-base sm:text-[17px] font-black text-[#139091] leading-tight m-0">
-                      Giải Pháp MobyFlow
-                    </h4>
-                    <span className="text-xs font-semibold text-teal-600/80">
-                      (Tự Động &amp; Đột Phá)
-                    </span>
-                  </div>
-                </div>
-
-                <ul className="space-y-3.5 list-none p-0 m-0 text-xs sm:text-sm text-slate-800">
-                  {mobyWayList.map((text, i) => (
-                    <li key={i} className="flex items-center gap-3">
-                      <span className="text-[#139091] font-extrabold text-sm shrink-0">✓</span>
-                      <span className="font-semibold text-slate-800">{text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* ================= MOBILE VIEW: ACCORDION SO SÁNH ================= */}
-            <div className="block md:hidden space-y-3 mb-8 relative z-20">
-
-              {/* Accordion Cách Làm Cũ */}
-              <div className="bg-[#fff5f5] rounded-2xl border border-rose-100 p-4 shadow-xs">
-                <div
-                  onClick={() => setMobileOldOpen(!mobileOldOpen)}
-                  className="flex items-center justify-between cursor-pointer"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-rose-500 text-white flex items-center justify-center font-black text-xs shrink-0">
-                      ✕
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-black text-rose-600 leading-tight m-0">
-                        Cách Quản Trị Cũ
-                      </h4>
-                      <span className="text-[11px] font-semibold text-rose-500/80">
-                        (Thủ Công &amp; Bị Động)
-                      </span>
-                    </div>
-                  </div>
-                  <ChevronDown className={`w-4 h-4 text-rose-400 transition-transform duration-200 ${mobileOldOpen ? 'rotate-180' : ''}`} />
-                </div>
-
-                {mobileOldOpen && (
-                  <ul className="mt-3 pt-3 border-t border-rose-200/50 space-y-2 list-none p-0 m-0 text-xs text-slate-700 animate-fadeIn">
-                    {oldWayList.map((text, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <span className="text-rose-500 font-bold shrink-0">✕</span>
-                        <span>{text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-
-              {/* Accordion MobyFlow */}
-              <div className="bg-[#f0fdf9] rounded-2xl border border-teal-100 p-4 shadow-xs">
-                <div
-                  onClick={() => setMobileMobyOpen(!mobileMobyOpen)}
-                  className="flex items-center justify-between cursor-pointer"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#139091] text-white flex items-center justify-center font-black text-xs shrink-0">
-                      ✓
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-black text-[#139091] leading-tight m-0">
-                        Giải Pháp MobyFlow
-                      </h4>
-                      <span className="text-[11px] font-semibold text-teal-600/80">
-                        (Tự Động &amp; Đột Phá)
-                      </span>
-                    </div>
-                  </div>
-                  <ChevronDown className={`w-4 h-4 text-teal-500 transition-transform duration-200 ${mobileMobyOpen ? 'rotate-180' : ''}`} />
-                </div>
-
-                {mobileMobyOpen && (
-                  <ul className="mt-3 pt-3 border-t border-teal-200/50 space-y-2 list-none p-0 m-0 text-xs text-slate-800 animate-fadeIn">
-                    {mobyWayList.map((text, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <span className="text-[#139091] font-bold shrink-0">✓</span>
-                        <span className="font-semibold">{text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
-
-            {/* ================= 3 CHỨC NĂNG CHĂM SÓC CHỦ ĐẠO TRÊN MOBYFLOW ================= */}
-            <div className="relative z-20">
-
-              {/* Divider Pill Ở Giữa */}
-              <div className="flex justify-center my-6 sm:my-8">
-                <span className="inline-flex items-center gap-2 bg-[#ecfeff] text-[#0f766e] text-xs sm:text-sm font-black px-5 py-2 rounded-full border border-teal-200/70 shadow-xs uppercase tracking-wide">
-                  <span className="hidden sm:inline">3 Chức Năng Chăm Sóc Chủ Đạo Trên MobyFlow</span>
-                  <span className="sm:hidden">3 Chức Năng Chăm Sóc Chủ Đạo</span>
-                </span>
-              </div>
-
-              {/* DESKTOP VIEW: 3 CARDS ĐA SẮC PASTEL */}
-              <div className="hidden md:grid md:grid-cols-3 gap-5">
-                {coreFunctions.map((fn) => (
-                  <div
-                    key={fn.id}
-                    className={`rounded-3xl p-6 border ${fn.cardBorder} ${fn.cardBg} shadow-[0_4px_16px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between`}
-                  >
-                    <div>
-                      {/* Dòng đầu: Icon vuông bo tròn + Badge số chức năng */}
-                      <div className="flex items-center justify-between mb-4">
-                        <div className={`w-12 h-12 rounded-2xl ${fn.iconBg} flex items-center justify-center shadow-xs`}>
-                          {fn.icon}
-                        </div>
-                        <span className={`text-xs font-bold px-3 py-1 rounded-full ${fn.badgeColor}`}>
-                          {fn.badge}
-                        </span>
-                      </div>
-
-                      {/* Tiêu đề chức năng */}
-                      <h4 className="text-base sm:text-[17px] font-black text-slate-900 tracking-tight leading-snug mb-2.5">
-                        {fn.title}
-                      </h4>
-
-                      {/* Mô tả chức năng */}
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5">
-                        {fn.desc}
-                      </p>
-                    </div>
-
-                    {/* Tag cam kết kết quả ở đáy card */}
-                    <div>
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 text-slate-800 text-xs font-bold border border-slate-200/70 shadow-2xs">
-                        {fn.id === 1 && <span className="text-emerald-500 font-black text-xs">✓</span>}
-                        {fn.id === 2 && <span className="w-2.5 h-2.5 rounded-full bg-purple-500 shrink-0" />}
-                        {fn.id === 3 && <span className="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0" />}
-                        <span>{fn.benefit}</span>
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* MOBILE VIEW: 3 CARDS COMPACT CÓ ACCORDION BUNG MỞ */}
-              <div className="block md:hidden space-y-3">
-                {coreFunctions.map((fn) => {
-                  const isExpanded = expandedCoreIdx === fn.id;
-                  return (
-                    <div
-                      key={fn.id}
-                      onClick={() => setExpandedCoreIdx(isExpanded ? null : fn.id)}
-                      className={`${fn.cardBg} rounded-2xl p-4 border ${fn.cardBorder} shadow-xs transition-all duration-200 cursor-pointer active:scale-[0.99]`}
-                    >
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-3.5 min-w-0">
-                          <div className={`w-11 h-11 rounded-full ${fn.iconBg} flex items-center justify-center shrink-0 shadow-xs`}>
-                            {fn.icon}
-                          </div>
-                          <div className="min-w-0">
-                            <h4 className="text-sm font-black text-slate-900 truncate mb-1">
-                              {fn.title}
-                            </h4>
-                            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-800 bg-white/95 px-2.5 py-0.5 rounded-full border border-slate-200/60 shadow-2xs">
-                              {fn.id === 1 && <span className="text-emerald-500 font-black text-[10px]">✓</span>}
-                              {fn.id === 2 && <span className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />}
-                              {fn.id === 3 && <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />}
-                              <span>{fn.benefit}</span>
-                            </span>
-                          </div>
-                        </div>
-                        <div className="shrink-0 text-slate-400 pl-1">
-                          <ChevronRight className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-90 text-[#139091]' : ''}`} />
-                        </div>
-                      </div>
-
-                      {isExpanded && (
-                        <div className="mt-3 pt-3 border-t border-slate-200/60 text-xs text-slate-600 leading-relaxed animate-fadeIn">
-                          {fn.desc}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-
-            </div>
-
-          </div>
-        </ScrollReveal>
 
       </div>
     </section>

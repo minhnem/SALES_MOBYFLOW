@@ -6,7 +6,7 @@ import HeroSection from '@/components/landing/HeroSection';
 import PainPointsSection from '@/components/landing/PainPointsSection';
 // import AiEcosystem from '@/components/landing/AiEcosystem';
 // import ChannelIntegration from '@/components/landing/ChannelIntegration';
-import FeaturesGrid from '@/components/landing/FeaturesGrid';
+// import FeaturesGrid from '@/components/landing/FeaturesGrid';
 import WorkflowSteps from '@/components/landing/WorkflowSteps';
 import ProductShowcase from '@/components/landing/ProductShowcase';
 import StatsAndTestimonials from '@/components/landing/StatsAndTestimonials';
@@ -59,47 +59,37 @@ export default function LandingPage() {
 
       {/* Main Content Sections */}
       <main id="main-content">
-        {/* 1. Landing Statement Hero Section (Phong cách Dabilux.com: Dark mode, Letter-Rise, Particles & Glow) */}
+        {/* 1. Trang Giới Thiệu: Landing Statement Hero Section (Phong cách Dabilux.com: Dark mode, Letter-Rise, Particles & Glow) */}
         <StatementHeroSection onOpenTrial={handleOpenTrial} />
 
         {/* Dải Marquee phong cách viền sáng chuyển tiếp */}
         <MarqueeBand variant="outline" />
 
-        {/* 2. Interactive Live Demo Showcase (Hero Section cũ giữ nguyên 100% với Mô phỏng Zalo ZNS & KiotViet) */}
-        <HeroSection onOpenTrial={handleOpenTrial} />
-
-        {/* Dải marquee điểm nhấn giữa Demo và Pain Points */}
-        <MarqueeBand />
-
-        {/* 3. Nỗi Đau Của Các Shop Mẹ & Bé (Pain Points & Comparison) */}
+        {/* 2. Trang Nỗi Đau: 6 Nỗi Đau Của Các Shop Mẹ & Bé + Bảng So Sánh Sự Khác Biệt */}
         <PainPointsSection />
 
-        {/* ========================================================================= */}
-        {/* [TẠM COMMENT THEO PHƯƠNG ÁN 1 TINH GỌN ĐỂ TRÌNH SẾP DUYỆT]                */}
-        {/* Tạm ẩn 2 khối bên dưới để tránh trùng lặp tính năng, giảm 45% độ dài trang */}
-        {/* ========================================================================= */}
-        {/* <AiEcosystem /> */}
-        {/* <ChannelIntegration /> */}
+        {/* Dải marquee điểm nhấn chuyển tiếp sang Giải pháp */}
+        <MarqueeBand />
 
-        {/* 3. Hệ Thống Tính Năng Đã Hoàn Thiện 100% Theo Báo Cáo */}
-        <FeaturesGrid />
+        {/* 3. Trang Giải Pháp: Tự Động Hóa Chăm Sóc Chu Kỳ Sữa Bỉm Qua Zalo ZNS (Gộp 3 Chức Năng Chủ Đạo + Demo Điện Thoại) */}
+        <HeroSection onOpenTrial={handleOpenTrial} />
 
-        {/* 6. Quy Trình Chăm Sóc Khép Kín 4 Bước */}
+        {/* 4. Trang Quy Trình: Quy Trình Chăm Sóc Khép Kín 4 Bước */}
         <WorkflowSteps />
 
-        {/* 7. Trực Quan Hóa Giao Diện Thực Tế MobyFlow */}
+        {/* 5. Trực Quan Hóa Giao Diện Thực Tế MobyFlow */}
         <ProductShowcase onOpenTrial={handleOpenTrial} />
 
-        {/* 8. Con Số Thực Tế & Chia Sẻ Từ Chủ Shop Mẹ Bé */}
+        {/* 7. Con Số Thực Tế & Chia Sẻ Từ Chủ Shop Mẹ Bé */}
         <StatsAndTestimonials />
 
-        {/* 9. Bảng Giá Gói Dịch Vụ Cho Cửa Hàng & Chuỗi Mẹ Bé */}
+        {/* 8. Bảng Giá Gói Dịch Vụ Cho Cửa Hàng & Chuỗi Mẹ Bé */}
         <PricingSection onOpenTrial={handleOpenTrial} />
 
-        {/* 10. Câu Hỏi Thường Gặp (FAQ) */}
+        {/* 9. Câu Hỏi Thường Gặp (FAQ) */}
         <FaqSection />
 
-        {/* 11. Banner Kêu Gọi Hành Động (CTA) */}
+        {/* 10. Banner Kêu Gọi Hành Động (CTA) */}
         <MarqueeBand variant="outline" reverse />
         <CtaBanner onOpenTrial={handleOpenTrial} />
       </main>

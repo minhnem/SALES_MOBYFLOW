@@ -82,9 +82,9 @@ const MegaFooter = () => {
                 </a>
               </li>
               <li className="pt-1">
-                <Link href="/dashboard" className="text-teal-300 hover:text-white font-semibold inline-flex items-center gap-1">
+                {/* <Link href="/dashboard" className="text-teal-300 hover:text-white font-semibold inline-flex items-center gap-1">
                   Bảng điều khiển quản trị &rarr;
-                </Link>
+                </Link> */}
               </li>
             </ul>
           </div>
@@ -128,9 +128,9 @@ const MegaFooter = () => {
           <div>
             <h4 className="text-white font-bold text-sm mb-4 tracking-wide uppercase flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-teal-300" />
-              Hỗ Trợ &amp; Pháp Lý
+              Bảo Mật Dữ Liệu:
             </h4>
-            <ul className="space-y-2.5 list-none p-0 m-0 text-xs sm:text-[13px]">
+            {/* <ul className="space-y-2.5 list-none p-0 m-0 text-xs sm:text-[13px]">
               <li>
                 <a href="#faq" className="text-teal-100/75 hover:text-white transition inline-block">
                   Câu hỏi thường gặp (FAQ)
@@ -156,9 +156,12 @@ const MegaFooter = () => {
                   Cài đặt hệ thống
                 </Link>
               </li>
-            </ul>
-
-            <div className="mt-6 pt-4 border-t border-teal-500/20">
+            </ul> */}
+            <div className="inline-flex items-center space-x-1.5 text-xs text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 px-2.5 py-1 rounded-xl shadow-xs">
+              <SafetyCertificateOutlined className="text-emerald-400" />
+              <span>Bảo Mật Dữ Liệu Khách Hàng ISO 27001</span>
+            </div>
+            {/* <div className="mt-6 pt-4 border-t border-teal-500/20">
               <span className="text-[11px] font-semibold text-teal-200/80 block mb-2">
                 Bảo Mật Dữ Liệu:
               </span>
@@ -166,7 +169,7 @@ const MegaFooter = () => {
                 <SafetyCertificateOutlined className="text-emerald-400" />
                 <span>Bảo Mật Dữ Liệu Khách Hàng ISO 27001</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

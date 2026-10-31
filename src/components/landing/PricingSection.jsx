@@ -243,11 +243,11 @@ const PricingSection = ({ onOpenTrial }) => {
         {/* Tiêu đề Bảng Giá Đầu Tư Hiệu Quả */}
         <ScrollReveal direction="up">
           <div className="text-center max-w-4xl lg:max-w-5xl mx-auto mb-10 sm:mb-12">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#ccfbf1]/80 text-[#0f766e] font-extrabold text-xs uppercase tracking-wider mb-3 border border-teal-200/80 shadow-2xs">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#ccfbf1]/80 text-[#0f766e] font-extrabold text-xs uppercase tracking-wider mb-3.5 sm:mb-4 border border-teal-200/80 shadow-2xs">
               Bảng Giá Đầu Tư Hiệu Quả
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[38px] font-black text-slate-900 tracking-tight leading-tight mb-3 lg:whitespace-nowrap">
+            <h2 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[38px] font-black text-slate-900 tracking-tight leading-[1.38] sm:leading-[1.45] mb-3.5 sm:mb-4 lg:whitespace-nowrap">
               <span className="block sm:inline">Chi phí cực nhỏ</span>
               <span className="hidden sm:inline"> - </span>
               <span className="text-[#0d9488] block sm:inline">
@@ -263,7 +263,7 @@ const PricingSection = ({ onOpenTrial }) => {
             <div className="inline-flex items-center gap-2 px-3 py-1.5">
               <GoldenDoodleLeft />
               <span className="bg-[#fef08a] text-amber-950 font-black text-xs px-2.5 py-1 rounded-full shadow-2xs uppercase tracking-wider inline-flex items-center gap-1">
-                % Tiết Kiệm 20%
+                Tiết Kiệm 20%
               </span>
               <span className="text-xs sm:text-sm font-semibold text-slate-700">
                 Bảng giá áp dụng thanh toán trọn gói theo năm
@@ -277,13 +277,13 @@ const PricingSection = ({ onOpenTrial }) => {
         {/* DESKTOP VIEW: 3 Thẻ bảng giá nằm ngang đúng 100% Mockup Ảnh                */}
         {/* ========================================================================= */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-6 xl:gap-8 items-stretch pt-4">
-          
+
           {/* Card 1: Gói Dùng Thử */}
           <ScrollReveal direction="up" delay={0.05}>
             <div className="h-full bg-white rounded-[32px] p-6 sm:p-7 border border-slate-100 shadow-[0_12px_36px_-12px_rgba(0,0,0,0.06)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
               <div>
-                {/* Top header: Icon + Tag */}
-                <div className="flex items-center justify-between mb-3">
+                {/* Top header: Icon + Tag (Cao đúng 40px mb-4 để cả 3 cột thẳng hàng tuyệt đối) */}
+                <div className="h-10 flex items-center justify-between mb-4">
                   <div className="w-10 h-10 rounded-2xl bg-[#e6fffa] border border-[#ccfbf1] flex items-center justify-center text-[#0d9488] shadow-2xs group-hover:scale-105 transition-transform">
                     <Send className="w-5 h-5 -rotate-45" />
                   </div>
@@ -293,15 +293,15 @@ const PricingSection = ({ onOpenTrial }) => {
                 </div>
 
                 {/* Tên gói & mô tả */}
-                <h3 className="text-2xl font-black text-slate-900 mb-1">
+                <h3 className="text-2xl font-black text-slate-900 mb-1 leading-snug">
                   Gói Dùng Thử
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed min-h-[34px] mb-4">
+                <p className="text-xs text-slate-500 leading-relaxed min-h-[38px] mb-4 flex items-start">
                   Phù hợp cho shop mẹ &amp; bé trải nghiệm tính năng nhắc chu kỳ tiêu dùng
                 </p>
 
                 {/* Giá gói */}
-                <div className="mb-6 pb-5 border-b border-slate-100">
+                <div className="mb-6 pb-5 border-b border-slate-100 min-h-[80px]">
                   <div className="flex items-baseline gap-1">
                     <span className="text-3xl xl:text-[34px] font-black text-slate-900 tracking-tight font-outfit">
                       XXX.XXX
@@ -332,9 +332,10 @@ const PricingSection = ({ onOpenTrial }) => {
               <button
                 type="button"
                 onClick={() => onOpenTrial && onOpenTrial('Gói Dùng Thử')}
-                className="btn-shine w-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-[#0d9488] text-slate-800 font-bold rounded-2xl py-3 px-4 text-xs sm:text-sm flex items-center justify-center gap-1 shadow-2xs hover:shadow-md hover:scale-105 transition-all cursor-pointer"
+                className="btn-shine w-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-[#0d9488] text-slate-800 font-bold rounded-2xl py-3.5 px-4 text-xs sm:text-sm flex items-center justify-center gap-1 shadow-2xs hover:shadow-md hover:scale-[1.02] transition-all cursor-pointer font-sans"
+                style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}
               >
-                <span>Đăng ký dùng thử 14 ngày miễn phí</span>
+                <span className="font-bold">Đăng ký dùng thử 14 ngày miễn phí</span>
                 <ChevronRight className="w-4 h-4 text-slate-400" />
               </button>
             </div>
@@ -342,8 +343,8 @@ const PricingSection = ({ onOpenTrial }) => {
 
           {/* Card 2: Gói Phát Triển (Ngôi sao chủ đạo - Nền Xanh Teal Đậm) */}
           <ScrollReveal direction="up" delay={0.12}>
-            <div className="relative h-full rounded-[32px] p-6 sm:p-7 bg-gradient-to-b from-[#0d9488] via-[#0f766e] to-[#0a4642] text-white shadow-2xl shadow-teal-800/35 border border-teal-300/30 flex flex-col justify-between overflow-visible group lg:-translate-y-2">
-              
+            <div className="relative h-full rounded-[32px] p-6 sm:p-7 bg-gradient-to-b from-[#0d9488] via-[#0f766e] to-[#0a4642] text-white shadow-2xl shadow-teal-800/35 border border-teal-300/30 flex flex-col justify-between overflow-visible group">
+
               {/* Cụm Vương Miện Vàng 3D + Banner Khuyên Dùng liền mạch đúng Mockup */}
               <div className="absolute -top-5 left-1/2 -translate-x-1/2 flex items-center z-30 select-none pointer-events-none">
                 <div className="w-11 h-9 -mr-3.5 -mt-2.5 z-10 anim-crown drop-shadow-md">
@@ -355,23 +356,24 @@ const PricingSection = ({ onOpenTrial }) => {
               </div>
 
               {/* Huy hiệu % 3D lơ lửng góc trên bên phải */}
-              <div className="absolute top-4 right-4 w-11 h-11 pointer-events-none z-20 anim-badge-percent opacity-95 drop-shadow-md">
+              <div className="absolute top-3.5 right-4 w-11 h-11 pointer-events-none z-20 anim-badge-percent opacity-95 drop-shadow-md">
                 <PercentBadge3D className="w-full h-full" />
               </div>
 
               <div>
+                {/* Khoảng trống trên cao đúng 40px mb-4 để tiêu đề, mô tả và giá thẳng hàng tuyệt đối với Gói 1 và 3 */}
+                <div className="h-10 mb-4" />
+
                 {/* Tên gói & mô tả */}
-                <div className="pt-2">
-                  <h3 className="text-2xl font-black text-white mb-1">
-                    Gói Phát Triển
-                  </h3>
-                  <p className="text-xs text-teal-100 leading-relaxed min-h-[34px] mb-4">
-                    Tăng tốc doanh số và chăm sóc trọn vẹn: Thai kỳ ➔ Mẹ bầu ➔ Bé lớn
-                  </p>
-                </div>
+                <h3 className="text-2xl font-black text-white mb-1 leading-snug">
+                  Gói Phát Triển
+                </h3>
+                <p className="text-xs text-teal-100 leading-relaxed min-h-[38px] mb-4 flex items-start">
+                  Tăng tốc doanh số và chăm sóc trọn vẹn: Thai kỳ ➔ Mẹ bầu ➔ Bé lớn
+                </p>
 
                 {/* Giá gói */}
-                <div className="mb-4 pb-4 border-b border-teal-500/40">
+                <div className="mb-6 pb-5 border-b border-teal-500/30 min-h-[80px]">
                   <div className="flex items-baseline gap-1">
                     <span className="text-3xl xl:text-[34px] font-black text-white tracking-tight font-outfit">
                       XXX.XXX
@@ -385,15 +387,15 @@ const PricingSection = ({ onOpenTrial }) => {
                   </div>
                 </div>
 
-                {/* Hộp nổi bật: Đầy đủ tính năng – Phù hợp cho 80% shop */}
-                <div className="bg-white rounded-2xl p-2.5 mb-5 flex items-center gap-2.5 text-teal-950 shadow-xs">
+                {/* Hộp nổi bật: Đầy đủ tính năng – Phù hợp cho 80% shop mẹ & bé */}
+                {/* <div className="bg-white rounded-2xl p-2.5 mb-5 flex items-center gap-2.5 text-teal-950 shadow-xs">
                   <div className="w-7 h-7 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center shrink-0 text-[#0d9488]">
                     <Store className="w-4 h-4" />
                   </div>
-                  <span className="text-xs font-black leading-tight text-teal-900">
+                  <span className="text-xs font-bold leading-tight text-teal-900">
                     Đầy đủ tính năng – Phù hợp cho 80% shop mẹ &amp; bé
                   </span>
-                </div>
+                </div> */}
 
                 {/* Danh sách quyền lợi */}
                 <div className="space-y-3 mb-6">
@@ -408,13 +410,14 @@ const PricingSection = ({ onOpenTrial }) => {
                 </div>
               </div>
 
-              {/* Nút hành động Xanh Ngọc Nổi Bật Kèm Hiệu Ứng Sáng Quét Header */}
+              {/* Nút hành động Xanh Ngọc Nổi Bật Chuẩn Font Inter Sans-Serif Đồng Nhất */}
               <button
                 type="button"
                 onClick={() => onOpenTrial && onOpenTrial('Gói Phát Triển')}
-                className="btn-shine w-full bg-[#0d9488] hover:bg-[#0f766e] text-white font-black rounded-2xl py-3.5 px-4 text-xs sm:text-sm flex items-center justify-center gap-1 shadow-lg shadow-teal-950/40 hover:scale-105 transition-all cursor-pointer border-0"
+                className="btn-shine w-full bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold rounded-2xl py-3.5 px-4 text-xs sm:text-sm flex items-center justify-center gap-1 shadow-lg shadow-teal-950/40 hover:scale-[1.02] transition-all cursor-pointer border-0 font-sans"
+                style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}
               >
-                <span>Đăng ký nhận tư vấn</span>
+                <span className="font-bold">Đăng ký nhận tư vấn</span>
                 <ChevronRight className="w-4 h-4 text-teal-100" />
               </button>
             </div>
@@ -424,8 +427,8 @@ const PricingSection = ({ onOpenTrial }) => {
           <ScrollReveal direction="up" delay={0.18}>
             <div className="h-full bg-white rounded-[32px] p-6 sm:p-7 border border-slate-100 shadow-[0_12px_36px_-12px_rgba(0,0,0,0.06)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
               <div>
-                {/* Top header: Icon + Tag */}
-                <div className="flex items-center justify-between mb-3">
+                {/* Top header: Icon + Tag (Cao đúng 40px mb-4 để cả 3 cột thẳng hàng tuyệt đối) */}
+                <div className="h-10 flex items-center justify-between mb-4">
                   <div className="w-10 h-10 rounded-2xl bg-[#f0f9ff] border border-[#e0f2fe] flex items-center justify-center text-[#0284c7] shadow-2xs group-hover:scale-105 transition-transform">
                     <Gem className="w-5 h-5" />
                   </div>
@@ -435,15 +438,15 @@ const PricingSection = ({ onOpenTrial }) => {
                 </div>
 
                 {/* Tên gói & mô tả */}
-                <h3 className="text-2xl font-black text-slate-900 mb-1">
+                <h3 className="text-2xl font-black text-slate-900 mb-1 leading-snug">
                   Gói Pro
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed min-h-[34px] mb-4">
+                <p className="text-xs text-slate-500 leading-relaxed min-h-[38px] mb-4 flex items-start">
                   Giải pháp cao cấp nhất với trọn bộ 3 tính năng chăm sóc chủ đạo
                 </p>
 
                 {/* Giá gói */}
-                <div className="mb-6 pb-5 border-b border-slate-100">
+                <div className="mb-6 pb-5 border-b border-slate-100 min-h-[80px]">
                   <div className="flex items-baseline gap-1">
                     <span className="text-3xl xl:text-[34px] font-black text-slate-900 tracking-tight font-outfit">
                       X.XXX.XXX
@@ -474,9 +477,10 @@ const PricingSection = ({ onOpenTrial }) => {
               <button
                 type="button"
                 onClick={() => onOpenTrial && onOpenTrial('Gói Pro')}
-                className="btn-shine w-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-[#0d9488] text-slate-800 font-bold rounded-2xl py-3 px-4 text-xs sm:text-sm flex items-center justify-center gap-1 shadow-2xs hover:shadow-md hover:scale-105 transition-all cursor-pointer"
+                className="btn-shine w-full bg-white hover:bg-slate-50 border border-slate-200 hover:border-[#0d9488] text-slate-800 font-bold rounded-2xl py-3.5 px-4 text-xs sm:text-sm flex items-center justify-center gap-1 shadow-2xs hover:shadow-md hover:scale-[1.02] transition-all cursor-pointer font-sans"
+                style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}
               >
-                <span>Đăng ký nhận tư vấn</span>
+                <span className="font-bold">Đăng ký nhận tư vấn</span>
                 <ChevronRight className="w-4 h-4 text-slate-400" />
               </button>
             </div>
@@ -487,7 +491,7 @@ const PricingSection = ({ onOpenTrial }) => {
         {/* MOBILE VIEW: Dạng thẻ Accordion Thu Gọn & Mở Rộng đúng 100% Mockup Ảnh     */}
         {/* ========================================================================= */}
         <div className="lg:hidden flex flex-col space-y-3.5 pt-2">
-          
+
           {/* Card 1 Mobile: Gói Dùng Thử */}
           <div className="bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden transition-all">
             <div
@@ -533,9 +537,10 @@ const PricingSection = ({ onOpenTrial }) => {
                 <button
                   type="button"
                   onClick={() => onOpenTrial && onOpenTrial('Gói Dùng Thử')}
-                  className="btn-shine w-full bg-[#0d9488] text-white font-bold rounded-xl py-3 text-xs flex items-center justify-center gap-1 shadow-xs cursor-pointer"
+                  className="btn-shine w-full bg-[#0d9488] text-white font-bold rounded-xl py-3 text-xs flex items-center justify-center gap-1 shadow-xs cursor-pointer font-sans"
+                  style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}
                 >
-                  <span>Đăng ký dùng thử 14 ngày miễn phí</span>
+                  <span className="font-bold">Đăng ký dùng thử 14 ngày miễn phí</span>
                   <ChevronRight className="w-4 h-4 text-white" />
                 </button>
               </div>
@@ -584,9 +589,10 @@ const PricingSection = ({ onOpenTrial }) => {
                 <button
                   type="button"
                   onClick={() => onOpenTrial && onOpenTrial('Gói Phát Triển')}
-                  className="btn-shine w-full bg-white hover:bg-slate-50 text-[#0f766e] font-extrabold rounded-xl py-3 text-xs sm:text-sm flex items-center justify-center gap-1 shadow-md my-3 cursor-pointer"
+                  className="btn-shine w-full bg-white hover:bg-slate-50 text-[#0f766e] font-bold rounded-xl py-3 text-xs sm:text-sm flex items-center justify-center gap-1 shadow-md my-3 cursor-pointer font-sans"
+                  style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}
                 >
-                  <span>Đăng ký nhận tư vấn</span>
+                  <span className="font-bold">Đăng ký nhận tư vấn</span>
                   <ChevronRight className="w-4 h-4 text-[#0f766e]" />
                 </button>
 
@@ -647,9 +653,10 @@ const PricingSection = ({ onOpenTrial }) => {
                 <button
                   type="button"
                   onClick={() => onOpenTrial && onOpenTrial('Gói Pro')}
-                  className="btn-shine w-full bg-[#0d9488] text-white font-bold rounded-xl py-3 text-xs flex items-center justify-center gap-1 shadow-xs cursor-pointer"
+                  className="btn-shine w-full bg-[#0d9488] text-white font-bold rounded-xl py-3 text-xs flex items-center justify-center gap-1 shadow-xs cursor-pointer font-sans"
+                  style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}
                 >
-                  <span>Đăng ký nhận tư vấn</span>
+                  <span className="font-bold">Đăng ký nhận tư vấn</span>
                   <ChevronRight className="w-4 h-4 text-white" />
                 </button>
               </div>

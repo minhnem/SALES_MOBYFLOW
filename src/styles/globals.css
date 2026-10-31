@@ -32,6 +32,15 @@ a:visited {
   color: inherit;
 }
 
+/* Button & form controls reset for disabled Tailwind preflight */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
+
 .site-layout-content {
   min-height: 280px;
   padding: 24px;

@@ -56,13 +56,13 @@ const FaqSection = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal direction="up">
           <div className="text-center mb-10 sm:mb-12">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#139091] bg-teal-50 border border-teal-200/80 px-3.5 py-1 rounded-full inline-block shadow-2xs">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#139091] bg-teal-50 border border-teal-200/80 px-3.5 py-1 rounded-full inline-block mb-3.5 shadow-2xs">
               Giải Đáp Thắc Mắc Cho Shop Mẹ & Bé
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight mt-2.5">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-[1.35] sm:leading-[1.42] mb-3">
               Câu hỏi thường gặp
             </h2>
-            <p className="mt-2.5 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed m-0">
               Mọi điều bạn cần biết về giải pháp tự động hóa chu kỳ chăm sóc khách hàng MobyFlow.
             </p>
           </div>

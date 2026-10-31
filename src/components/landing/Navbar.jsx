@@ -39,12 +39,12 @@ const Navbar = ({ onOpenTrial }) => {
   // Theo dõi mục đang xem trên màn hình để làm sáng nút trên header
   useEffect(() => {
     if (typeof window === 'undefined') return undefined;
-    const sectionIds = ['pain-points', 'features', 'workflow', 'pricing', 'faq'];
+    const sectionIds = ['pain-points', 'solution', 'workflow', 'features', 'pricing', 'faq'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+            setActiveSection(entry.target.id === 'pain-points' ? 'solution' : entry.target.id);
           }
         });
       },
@@ -58,9 +58,9 @@ const Navbar = ({ onOpenTrial }) => {
   }, []);
 
   const navLinks = [
-    { label: 'Giải pháp', href: '#pain-points', id: 'pain-points' },
-    { label: 'Tính năng', href: '#features', id: 'features' },
+    { label: 'Giải pháp', href: '#solution', id: 'solution' },
     { label: 'Quy trình', href: '#workflow', id: 'workflow' },
+    { label: 'Tính năng', href: '#features', id: 'features' },
     { label: 'Bảng giá', href: '#pricing', id: 'pricing' },
     { label: 'Hỏi đáp', href: '#faq', id: 'faq' },
   ];
@@ -106,11 +106,10 @@ const Navbar = ({ onOpenTrial }) => {
       {/* Main Sticky Navbar - Fixed Height Không Gây Giật Layout */}
       <header
         id="landing-header"
-        className={`sticky top-0 z-50 h-16 sm:h-[68px] flex items-center transition-[background-color,border-color,box-shadow] duration-300 ease-out ${
-          scrolled
+        className={`sticky top-0 z-50 h-16 sm:h-[68px] flex items-center transition-[background-color,border-color,box-shadow] duration-300 ease-out ${scrolled
             ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100'
             : 'bg-[#0a3835]/90 backdrop-blur-md border-b border-teal-400/20 shadow-lg shadow-teal-950/20'
-        }`}
+          }`}
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo với khung cố định kích thước chống dịch chuyển - không bị outline viền đen */}
@@ -137,15 +136,13 @@ const Navbar = ({ onOpenTrial }) => {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`header-nav-link ${
-                    scrolled ? 'header-nav-link-scrolled' : ''
-                  } ${
-                    isActive
+                  className={`header-nav-link ${scrolled ? 'header-nav-link-scrolled' : ''
+                    } ${isActive
                       ? scrolled
                         ? '!bg-teal-50 !text-[#139091] font-bold shadow-2xs'
                         : '!bg-white/20 !text-white font-bold'
                       : ''
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </a>
@@ -168,13 +165,21 @@ const Navbar = ({ onOpenTrial }) => {
 
           {/* Mobile Menu Toggle */}
           <div className="lg:hidden flex items-center space-x-2">
-            <Button
+            <button
               id="btn-mobile-menu-toggle"
-              type="text"
-              icon={<MenuOutlined className={`text-xl ${scrolled ? 'text-gray-700' : 'text-white'}`} />}
+              type="button"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Mở menu điều hướng"
-            />
+              className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 cursor-pointer border outline-none focus:outline-none ${scrolled
+                  ? 'bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-200/80 shadow-2xs'
+                  : 'bg-white/15 hover:bg-white/25 text-white border-white/25 shadow-sm backdrop-blur-sm'
+                }`}
+            >
+              <MenuOutlined
+                className="text-xl"
+                style={{ color: scrolled ? '#1e293b' : '#ffffff', fontSize: '20px' }}
+              />
+            </button>
           </div>
         </div>
       </header>

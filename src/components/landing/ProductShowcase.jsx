@@ -17,20 +17,22 @@ const ProductShowcase = ({ onOpenTrial }) => {
   ];
 
   return (
-    <section id="showcase" className="scroll-mt-20 py-12 sm:py-16 bg-slate-950 text-white relative overflow-hidden">
+    <section id="showcase" data-section="video" className="scroll-mt-20 py-12 sm:py-16 bg-slate-950 text-white relative overflow-hidden">
+      {/* Anchor phục vụ cuộn đến phần video trực tiếp */}
+      <div id="video" className="absolute top-0 left-0 scroll-mt-20 pointer-events-none" aria-hidden="true" />
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-[#139091]/25 via-teal-600/20 to-purple-600/20 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal direction="up">
           <div className="text-center max-w-4xl mx-auto mb-12">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/70 border border-cyan-800/60 px-3.5 py-1 rounded-full inline-block">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/70 border border-cyan-800/60 px-3.5 py-1 rounded-full inline-block mb-3 sm:mb-3.5">
               Giao Diện Thực Tế MobyFlow
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-[1.38] sm:leading-[1.45] mb-3 sm:mb-4">
               Trực quan hóa quy trình chăm sóc chu kỳ khách hàng
             </h2>
-            <p className="mt-2 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-base text-gray-300 max-w-2xl mx-auto m-0">
               Thiết kế tinh gọn cho chủ shop Mẹ &amp; Bé, làm quen và sử dụng thành thạo sau 15 phút.
             </p>
           </div>

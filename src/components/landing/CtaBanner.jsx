@@ -22,10 +22,10 @@ const CtaBanner = ({ onOpenTrial }) => {
 
             <div className="relative z-10 max-w-4xl mx-auto">
               <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-wider bg-white/20 text-white px-3.5 py-1 rounded-full mb-3">
-                🚀 Bứt Phá Doanh Số Tái Mua
+                Bứt Phá Doanh Số Tái Mua
               </span>
 
-              <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4 leading-tight">
+              <h2 className="text-2xl sm:text-5xl font-black text-white tracking-tight leading-[1.32] sm:leading-[1.4] mb-4 sm:mb-5">
                 <RevealText text="Sẵn sàng nhân đôi tỷ lệ mẹ bỉm" />{' '}
                 <RevealText text="quay lại mua hàng?" startDelay={0.5} flash />
               </h2>

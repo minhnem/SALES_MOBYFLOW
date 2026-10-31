@@ -456,10 +456,10 @@ const WorkflowSteps = () => {
         {/* Tiêu đề mục Quy Trình Khép Kín 4 Bước */}
         <ScrollReveal direction="up">
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#f3e8ff] border border-purple-200/80 text-[#7c3aed] text-xs sm:text-sm font-extrabold uppercase tracking-wider mb-3 shadow-2xs">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#f3e8ff] border border-purple-200/80 text-[#7c3aed] text-xs sm:text-sm font-extrabold uppercase tracking-wider mb-3.5 sm:mb-4 shadow-2xs">
               Quy Trình Khép Kín 4 Bước
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-black text-slate-900 tracking-tight leading-tight mb-3">
+            <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-black text-slate-900 tracking-tight leading-[1.38] sm:leading-[1.46] mb-4 sm:mb-5">
               Từ lúc khách mua đến khi{' '}
               <span className="text-[#0d9488]">tự động quay lại mua lần tiếp theo</span>
             </h2>

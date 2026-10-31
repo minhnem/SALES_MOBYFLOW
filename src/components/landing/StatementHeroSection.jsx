@@ -3,7 +3,6 @@ import { Button } from 'antd';
 import {
   ThunderboltFilled,
   PlayCircleOutlined,
-  StarFilled,
   ArrowDownOutlined,
   SyncOutlined,
   HeartOutlined,
@@ -18,7 +17,6 @@ import TechGridBackground from './TechGridBackground';
 const StatementCursor = () => {
   const [pos, setPos] = useState({ x: 50, y: 46 });
   const [clicking, setClicking] = useState(false);
-  const [label, setLabel] = useState('MOBYFLOW');
 
   useEffect(() => {
     if (typeof window === 'undefined') return undefined;
@@ -27,12 +25,12 @@ const StatementCursor = () => {
     }
 
     const waypoints = [
-      { x: 50, y: 36, text: 'MOBYFLOW' },
-      { x: 28, y: 48, text: 'CHU KỲ BỈM SỮA' },
-      { x: 50, y: 49, text: 'VÒNG ĐỜI MẸ & BÉ' },
-      { x: 72, y: 48, text: 'CHIẾN DỊCH THÁNG' },
-      { x: 64, y: 64, text: 'ZALO ZNS TÍCH VÀNG' },
-      { x: 36, y: 64, text: 'ĐỒNG BỘ KIOTVIET' },
+      { x: 50, y: 36 },
+      { x: 28, y: 48 },
+      { x: 50, y: 49 },
+      { x: 72, y: 48 },
+      { x: 64, y: 64 },
+      { x: 36, y: 64 },
     ];
 
     let step = 0;
@@ -43,7 +41,6 @@ const StatementCursor = () => {
       step = (step + 1) % waypoints.length;
       const target = waypoints[step];
       setPos({ x: target.x, y: target.y });
-      setLabel(target.text);
 
       clickTimer = setTimeout(() => {
         setClicking(true);
@@ -86,7 +83,7 @@ const StatementCursor = () => {
           />
         </svg>
         <span className="cursor-label !bg-gradient-to-r !from-[#139091] !to-teal-500 !text-white !font-black !tracking-wider">
-          {label}
+          MobyFlow
         </span>
       </div>
     </div>
@@ -121,9 +118,17 @@ const LetterRiseLine = ({ text, startIdx = 0, isAccent = false, className = '' }
  */
 const StatementHeroSection = ({ onOpenTrial }) => {
   const handleScrollToDemo = () => {
-    const el = document.getElementById('interactive-demo');
+    const el =
+      document.getElementById('video') ||
+      document.getElementById('showcase');
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 76;
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
     }
   };
 
@@ -181,11 +186,11 @@ const StatementHeroSection = ({ onOpenTrial }) => {
 
           {/* Đoạn mô tả Lead ngắn gọn súc tích bao hàm 3 chức năng */}
           <p className="statement-lead mb-6 sm:mb-7 leading-relaxed text-white/80 sm:max-w-2xl">
-            Tự động tính chu kỳ hết bỉm sữa, đồng hành từng cột mốc bé 0-36 tháng và kích hoạt ưu đãi tháng — giúp Shop Mẹ &amp; Bé giữ chân khách hàng và nhân đôi doanh thu tái mua.
+            Tự động tính chu kỳ hết bỉm sữa, đồng hành từng cột mốc bé 0-36 tháng và kích hoạt ưu đãi tháng - giúp Shop Mẹ &amp; Bé giữ chân khách hàng và nhân đôi doanh thu tái mua.
           </p>
 
           {/* Cụm 2 nút Kêu gọi hành động (CTA kép cao cấp) */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 sm:mb-7 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-2 sm:mb-3 w-full sm:w-auto">
             <Button
               id="btn-statement-trial"
               type="primary"
@@ -204,57 +209,9 @@ const StatementHeroSection = ({ onOpenTrial }) => {
               className="w-full sm:w-auto h-12 sm:h-14 py-3 sm:py-3.5 px-7 text-base font-bold text-white/90 hover:text-white bg-white/10 hover:bg-white/15 border border-white/20 rounded-2xl backdrop-blur-md transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer shadow-lg whitespace-nowrap shrink-0 hover:scale-105"
             >
               <PlayCircleOutlined className="text-teal-300 text-lg" />
-              <span>Xem Demo tương tác ZNS</span>
+              <span>Xem cách thức hoạt động</span>
               <ArrowDownOutlined className="text-xs text-white/60 animate-bounce" />
             </button>
-          </div>
-
-          {/* Đánh giá Social Proof 4.9 Sao */}
-          <div className="mb-5 sm:mb-6 flex flex-col items-center gap-1.5">
-            <div className="flex items-center gap-2">
-              <div className="flex gap-1 text-[0.85rem] text-[#FFB800] sm:text-[1.15rem]">
-                <StarFilled />
-                <StarFilled />
-                <StarFilled />
-                <StarFilled />
-                <StarFilled />
-              </div>
-              <span className="text-[0.95rem] font-bold text-white sm:text-[1.2rem]">
-                4.9 / 5.0
-              </span>
-            </div>
-            <p className="text-xs sm:text-sm text-white/70 m-0">
-              Đánh giá tin cậy từ 500+ chủ Shop Mẹ & Bé và chuỗi sữa bỉm toàn quốc
-            </p>
-          </div>
-
-          {/* Dải Badge đối tác tích hợp (Zalo OA, KiotViet, ZNS, AI, POS) */}
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 py-1.5 pr-4 pl-2 backdrop-blur-md sm:gap-3 sm:py-2 sm:pr-5 sm:pl-2.5 shadow-lg">
-            <div className="flex -space-x-2">
-              {/* Zalo Icon Badge */}
-              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0a3835] bg-[#0068ff] text-white text-[10px] font-black">
-                Zalo
-              </span>
-              {/* KiotViet Icon Badge */}
-              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0a3835] bg-blue-600 text-white text-[10px] font-black">
-                KV
-              </span>
-              {/* ZNS Gold Badge */}
-              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0a3835] bg-amber-500 text-white text-[10px] font-bold">
-                ZNS
-              </span>
-              {/* MobyFlow Teal Badge */}
-              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0a3835] bg-[#139091] text-white text-[10px] font-bold">
-                AUTO
-              </span>
-              {/* Orange Accent */}
-              <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-[#0a3835] bg-[#F06430] text-white text-[10px] font-bold">
-                24/7
-              </span>
-            </div>
-            <span className="text-xs sm:text-sm font-semibold text-white/85">
-              Đã kích hoạt 1.200.000+ lượt chăm sóc chu kỳ tự động
-            </span>
           </div>
 
         </div>

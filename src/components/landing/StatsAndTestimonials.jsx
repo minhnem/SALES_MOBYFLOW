@@ -85,12 +85,12 @@ const StatsAndTestimonials = () => {
             <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 border border-emerald-200/80 px-3 py-1 rounded-full inline-block mb-3 shadow-2xs">
               Chia Sẻ Thực Tế
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-[1.38] sm:leading-[1.45] mb-3 sm:mb-4 max-w-3xl mx-auto">
               <RevealText text="Hàng trăm chủ Shop Mẹ & Bé" />{' '}
               <br className="hidden md:inline" />
               <RevealText text="tăng trưởng doanh thu cùng MobyFlow" startDelay={0.35} flash />
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-gray-600 max-w-xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto m-0">
               Chia sẻ thực tế từ các cửa hàng sữa bỉm sau khi tự động hóa chu kỳ chăm sóc.
             </p>
           </div>
