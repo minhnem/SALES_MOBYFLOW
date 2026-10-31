@@ -622,22 +622,31 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.08em;
+  gap: 0.1em;
   width: 100%;
   max-width: 100%;
   line-height: 1.15;
-  font-size: clamp(1.4rem, 5.2vw + 0.35rem, 4.6rem);
+  font-size: clamp(1.6rem, 3.4vw, 3.1rem);
   letter-spacing: -0.025em;
+  text-align: center;
 }
 
 .statement-line {
   white-space: nowrap;
   display: block;
+  max-width: 100%;
+  text-align: center;
 }
 
 @media (max-width: 639px) {
+  .statement-title {
+    gap: 0.16em;
+    line-height: 1.25;
+    font-size: clamp(0.95rem, 4.35vw, 1.25rem);
+    letter-spacing: -0.02em;
+  }
   .statement-line {
-    white-space: normal;
+    white-space: nowrap;
   }
 }
 
@@ -768,3 +777,153 @@ html {
   background-color: rgba(19, 144, 145, 0.08) !important;
   transform: translateY(-1px);
 }
+
+/* ================= 10) 3D Baby Decoratives Floating Animations ================= */
+@keyframes baby-bottle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-14deg) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) rotate(-10deg) scale(1.02);
+  }
+}
+
+@keyframes moon-star-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(6deg) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) rotate(10deg) scale(1.03);
+  }
+}
+
+@keyframes pacifier-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-4deg) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) rotate(4deg) scale(1.02);
+  }
+}
+
+.anim-baby-bottle {
+  animation: baby-bottle-float 5s ease-in-out infinite;
+}
+
+.anim-moon-star {
+  animation: moon-star-float 6s ease-in-out infinite;
+}
+
+.anim-pacifier {
+  animation: pacifier-float 5.5s ease-in-out infinite;
+}
+
+@keyframes fadeInMobile {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeInMobile 0.25s ease-out forwards;
+}
+
+@keyframes clipboard-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-8deg) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-5deg) scale(1.02);
+  }
+}
+
+@keyframes laptop-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(6deg) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) rotate(9deg) scale(1.02);
+  }
+}
+
+.anim-clipboard {
+  animation: clipboard-float 5s ease-in-out infinite;
+}
+
+.anim-laptop {
+  animation: laptop-float 5.5s ease-in-out infinite;
+}
+
+@keyframes dashboard-window-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(4deg) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) rotate(6deg) scale(1.02);
+  }
+}
+
+.anim-dashboard-window {
+  animation: dashboard-window-float 6s ease-in-out infinite;
+}
+
+@keyframes workflow-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.anim-workflow-float {
+  animation: workflow-float 4.5s ease-in-out infinite;
+}
+
+@keyframes crown-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+}
+
+.anim-crown {
+  animation: crown-float 4s ease-in-out infinite;
+}
+
+@keyframes badge-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(8deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(12deg);
+  }
+}
+
+.anim-badge-percent {
+  animation: badge-float 4.5s ease-in-out infinite;
+}
+
+/* ========================================================================= */
+/* Nền Màu Pastel MobyFlow chuẩn theo ảnh mẫu (Xanh Mint, Vàng Kem & Trắng Sứ) */
+/* ========================================================================= */
+.moby-light-grid-bg {
+  position: relative;
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(circle at 88% 12%, rgba(254, 240, 138, 0.45) 0%, rgba(254, 249, 195, 0.22) 45%, transparent 70%),
+    radial-gradient(circle at 12% 35%, rgba(207, 250, 254, 0.65) 0%, rgba(165, 243, 252, 0.25) 40%, transparent 65%),
+    radial-gradient(circle at 18% 85%, rgba(204, 251, 241, 0.6) 0%, rgba(153, 246, 228, 0.22) 50%, transparent 75%),
+    radial-gradient(circle at 82% 80%, rgba(224, 242, 254, 0.5) 0%, rgba(186, 230, 253, 0.18) 45%, transparent 70%),
+    linear-gradient(180deg, #fbfdfc 0%, #f4fbf9 50%, #ffffff 100%);
+}
+
+
+

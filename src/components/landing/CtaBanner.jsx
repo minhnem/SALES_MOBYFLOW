@@ -20,8 +20,8 @@ const CtaBanner = ({ onOpenTrial }) => {
             <div className="animate-aurora absolute -top-24 -left-24 w-80 h-80 rounded-full bg-white/10 blur-2xl pointer-events-none" />
             <div className="animate-aurora-slow absolute -bottom-24 -right-24 w-80 h-80 rounded-full bg-teal-400/20 blur-2xl pointer-events-none" />
 
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-wider bg-white/20 text-white px-3.5 py-1 rounded-full">
+            <div className="relative z-10 max-w-4xl mx-auto">
+              <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-wider bg-white/20 text-white px-3.5 py-1 rounded-full mb-3">
                 🚀 Bứt Phá Doanh Số Tái Mua
               </span>
 
@@ -30,17 +30,17 @@ const CtaBanner = ({ onOpenTrial }) => {
                 <RevealText text="quay lại mua hàng?" startDelay={0.5} flash />
               </h2>
 
-              <p className="text-base sm:text-lg text-teal-100 max-w-xl mx-auto mb-8">
+              <p className="text-base sm:text-lg text-teal-100 max-w-2xl mx-auto mb-8 leading-relaxed">
                 Kết nối KiotViet và kích hoạt Zalo ZNS chăm sóc chu kỳ để giữ chân khách quen ngay hôm nay.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3.5 sm:gap-4 mb-8">
                 <Button
                   id="btn-cta-banner-trial"
                   size="large"
                   icon={<ThunderboltOutlined />}
                   onClick={onOpenTrial}
-                  className="w-full sm:w-auto h-14 px-9 text-base sm:text-lg font-bold bg-white text-[#139091] hover:bg-teal-50 border-0 rounded-2xl shadow-xl btn-shine animate-glow-pulse hover:scale-105 transition-all duration-200"
+                  className="w-full sm:w-auto h-12 sm:h-14 py-3 sm:py-3.5 px-6 sm:px-8 text-sm sm:text-base font-bold bg-white text-[#139091] hover:bg-teal-50 border-0 rounded-2xl shadow-xl btn-shine animate-glow-pulse hover:scale-105 transition-all duration-200 whitespace-nowrap shrink-0 inline-flex items-center justify-center"
                 >
                   Bắt đầu dùng thử miễn phí 14 ngày
                 </Button>
@@ -49,16 +49,16 @@ const CtaBanner = ({ onOpenTrial }) => {
                   href={CONTACT.zaloUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto h-14 px-8 inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0068ff] hover:bg-[#0057d6] text-white text-base font-bold shadow-xl hover:scale-105 transition-all duration-200"
+                  className="w-full sm:w-auto h-12 sm:h-14 py-3 sm:py-3.5 px-6 sm:px-8 inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0068ff] hover:bg-[#0057d6] text-white text-sm sm:text-base font-bold shadow-xl hover:scale-105 transition-all duration-200 whitespace-nowrap shrink-0"
                 >
-                  Chat Zalo tư vấn
+                  <span>Chat Zalo tư vấn</span>
                 </a>
                 <a
                   id="btn-cta-call"
                   href={CONTACT.hotlineHref}
-                  className="w-full sm:w-auto h-14 px-8 inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white/60 hover:bg-white/10 text-white text-base font-bold transition-all duration-200"
+                  className="w-full sm:w-auto h-12 sm:h-14 py-3 sm:py-3.5 px-6 sm:px-8 inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white/60 hover:bg-white/10 text-white text-sm sm:text-base font-bold transition-all duration-200 whitespace-nowrap shrink-0"
                 >
-                  <PhoneFilled /> {CONTACT.hotlineDisplay}
+                  <PhoneFilled /> <span>{CONTACT.hotlineDisplay}</span>
                 </a>
               </div>
 

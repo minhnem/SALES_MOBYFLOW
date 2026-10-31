@@ -58,12 +58,11 @@ const categories = [
 
 const StatsAndTestimonials = () => {
   return (
-    <section id="testimonials" className="relative py-20 bg-white overflow-hidden">
-      <div className="dot-grid" aria-hidden="true" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="moby-light-grid-bg relative py-12 sm:py-16 overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         {/* Statistics 4 Numbers */}
         <ScrollReveal direction="up">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-teal-50 via-emerald-50/50 to-teal-50 border border-teal-100/70 mb-20">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 p-6 sm:p-8 rounded-3xl bg-white/80 backdrop-blur-sm border border-teal-100/80 shadow-sm mb-10 sm:mb-12">
             {stats.map((s, idx) => (
               <div key={idx} className="text-center">
                 <div className="text-3xl sm:text-4xl lg:text-[42px] font-black bg-gradient-to-r from-[#139091] to-teal-700 bg-clip-text text-transparent font-outfit leading-none">
@@ -82,8 +81,8 @@ const StatsAndTestimonials = () => {
 
         {/* Section Heading */}
         <ScrollReveal direction="up">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full inline-block mb-3">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 border border-emerald-200/80 px-3 py-1 rounded-full inline-block mb-3 shadow-2xs">
               Chia Sẻ Thực Tế
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight max-w-3xl mx-auto">
@@ -98,7 +97,7 @@ const StatsAndTestimonials = () => {
         </ScrollReveal>
 
         {/* Testimonial Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 sm:mb-14">
           {testimonials.map((t, idx) => (
             <ScrollReveal key={t.name} direction="up" delay={idx * 0.1} className="h-full">
               <div
@@ -110,35 +109,35 @@ const StatsAndTestimonials = () => {
                   '--delay': `${idx * 0.4}s`,
                 }}
               >
-              <span className="note-pin" aria-hidden="true" />
-              <div className="h-full bg-slate-50/70 p-7 rounded-3xl border border-gray-100 shadow-lg shadow-teal-900/5 hover:shadow-xl hover:border-teal-300 transition-shadow flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center space-x-1 text-amber-400 mb-4 text-sm">
-                    {[...Array(t.stars)].map((_, i) => (
-                      <StarFilled key={i} />
-                    ))}
+                <span className="note-pin" aria-hidden="true" />
+                <div className="h-full bg-white/90 backdrop-blur-xs p-7 rounded-3xl border border-teal-100/70 shadow-md shadow-teal-900/5 hover:shadow-xl hover:border-teal-300 transition-all flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center space-x-1 text-amber-400 mb-4 text-sm">
+                      {[...Array(t.stars)].map((_, i) => (
+                        <StarFilled key={i} />
+                      ))}
+                    </div>
+
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed italic mb-6 min-h-[6.5rem] sm:min-h-[7rem] flex items-start">
+                      "{t.quote}"
+                    </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed italic mb-6 min-h-[6.5rem] sm:min-h-[7rem] flex items-start">
-                    "{t.quote}"
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-gray-200/60 flex items-center gap-3">
-                  <div
-                    className={`w-11 h-11 min-w-[44px] min-h-[44px] rounded-full shrink-0 aspect-square ${t.avatarBg} text-white font-black flex items-center justify-center text-sm shadow-xs ring-2 ring-white`}
-                  >
-                    {t.avatar}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <h4 className="font-bold text-gray-900 text-base sm:text-lg m-0 leading-tight">{t.name}</h4>
-                    <p className="text-xs sm:text-sm text-gray-500 m-0 mt-0.5 truncate">{t.role}</p>
-                    <span className="text-xs text-emerald-600 font-medium flex items-center gap-1 mt-0.5">
-                      <CheckCircleFilled className="text-xs shrink-0" /> <span className="truncate">{t.verified}</span>
-                    </span>
+                  <div className="pt-4 border-t border-gray-200/60 flex items-center gap-3">
+                    <div
+                      className={`w-11 h-11 min-w-[44px] min-h-[44px] rounded-full shrink-0 aspect-square ${t.avatarBg} text-white font-black flex items-center justify-center text-sm shadow-xs ring-2 ring-white`}
+                    >
+                      {t.avatar}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="font-bold text-gray-900 text-base sm:text-lg m-0 leading-tight">{t.name}</h4>
+                      <p className="text-xs sm:text-sm text-gray-500 m-0 mt-0.5 truncate">{t.role}</p>
+                      <span className="text-xs text-emerald-600 font-medium flex items-center gap-1 mt-0.5">
+                        <CheckCircleFilled className="text-xs shrink-0" /> <span className="truncate">{t.verified}</span>
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
               </div>
             </ScrollReveal>
           ))}
@@ -147,18 +146,50 @@ const StatsAndTestimonials = () => {
         {/* Industry Fit Pills */}
         <ScrollReveal direction="up" delay={0.2}>
           <div className="text-center pt-8 border-t border-gray-100">
-            <h3 className="text-lg font-bold text-gray-800 mb-5">
-              Áp dụng hiệu quả cho mọi nhóm sản phẩm tiêu hao trong ngành Mẹ & Bé
+            <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-4 sm:mb-5 max-w-xl mx-auto leading-snug px-2">
+              Áp dụng hiệu quả cho mọi nhóm <span className="whitespace-nowrap">sản phẩm tiêu hao</span> trong ngành Mẹ &amp; Bé
             </h3>
-            <div className="flex flex-wrap items-center justify-center gap-2.5 max-w-4xl mx-auto">
+
+            {/* Desktop View: Hiển thị dàn hàng ngang mượt mà */}
+            <div className="hidden sm:flex flex-wrap items-center justify-center gap-2.5 max-w-4xl mx-auto">
               {categories.map((cat, i) => (
                 <span
                   key={i}
-                  className="bg-gray-50 hover:bg-teal-50 text-gray-700 hover:text-[#139091] hover:border-teal-300 font-medium text-xs sm:text-sm px-4 py-2 rounded-xl border border-gray-200/80 transition-colors"
+                  className="bg-gray-50 hover:bg-teal-50 text-gray-700 hover:text-[#139091] hover:border-teal-300 font-medium text-xs sm:text-sm px-4 py-2 rounded-xl border border-gray-200/80 transition-colors shadow-2xs"
                 >
                   {cat}
                 </span>
               ))}
+            </div>
+
+            {/* Mobile View: Chia đúng 3 dòng cân đối tuyệt đối */}
+            <div className="flex sm:hidden flex-col items-center gap-2 w-full px-1">
+              {/* Dòng 1: Sữa & Bỉm */}
+              <div className="flex items-center justify-center gap-1.5 w-full">
+                <span className="bg-gray-50 text-gray-700 font-medium text-[11px] px-2.5 py-1.5 rounded-xl border border-gray-200/80 whitespace-nowrap shadow-2xs">
+                  {categories[0]}
+                </span>
+                <span className="bg-gray-50 text-gray-700 font-medium text-[11px] px-2.5 py-1.5 rounded-xl border border-gray-200/80 whitespace-nowrap shadow-2xs">
+                  {categories[1]}
+                </span>
+              </div>
+
+              {/* Dòng 2: Ăn dặm & Vitamin */}
+              <div className="flex items-center justify-center gap-1.5 w-full">
+                <span className="bg-gray-50 text-gray-700 font-medium text-[11px] px-2.5 py-1.5 rounded-xl border border-gray-200/80 whitespace-nowrap shadow-2xs">
+                  {categories[2]}
+                </span>
+                <span className="bg-gray-50 text-gray-700 font-medium text-[11px] px-2.5 py-1.5 rounded-xl border border-gray-200/80 whitespace-nowrap shadow-2xs">
+                  {categories[3]}
+                </span>
+              </div>
+
+              {/* Dòng 3: Sữa tắm, Dầu massage & Kem chống hăm */}
+              <div className="flex items-center justify-center w-full">
+                <span className="bg-gray-50 text-gray-700 font-medium text-[11px] px-3.5 py-1.5 rounded-xl border border-gray-200/80 whitespace-nowrap shadow-2xs">
+                  {categories[4]}
+                </span>
+              </div>
             </div>
           </div>
         </ScrollReveal>

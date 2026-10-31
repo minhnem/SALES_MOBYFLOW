@@ -52,30 +52,30 @@ const faqs = [
 
 const FaqSection = () => {
   return (
-    <section id="faq" className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="moby-light-grid-bg scroll-mt-20 py-12 sm:py-16 relative overflow-hidden">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal direction="up">
-          <div className="text-center mb-14">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#139091] bg-teal-50 px-3 py-1 rounded-full inline-block">
+          <div className="text-center mb-10 sm:mb-12">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#139091] bg-teal-50 border border-teal-200/80 px-3.5 py-1 rounded-full inline-block shadow-2xs">
               Giải Đáp Thắc Mắc Cho Shop Mẹ & Bé
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight mt-2.5">
               Câu hỏi thường gặp
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="mt-2.5 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Mọi điều bạn cần biết về giải pháp tự động hóa chu kỳ chăm sóc khách hàng MobyFlow.
             </p>
           </div>
         </ScrollReveal>
 
         <ScrollReveal direction="up" delay={0.1}>
-          <div className="bg-slate-50/70 p-4 sm:p-6 rounded-3xl border border-gray-100">
+          <div className="bg-white/80 backdrop-blur-md p-4 sm:p-6 rounded-3xl border border-teal-100/80 shadow-sm">
             <Collapse
               items={faqs}
               defaultActiveKey={['1', '3']}
               expandIconPosition="end"
               bordered={false}
-              className="bg-transparent [&_.ant-collapse-item]:bg-white [&_.ant-collapse-item]:mb-3 [&_.ant-collapse-item]:rounded-2xl! [&_.ant-collapse-item]:border [&_.ant-collapse-item]:border-gray-100 [&_.ant-collapse-header]:font-bold [&_.ant-collapse-header]:text-gray-900 [&_.ant-collapse-header]:text-base sm:[&_.ant-collapse-header]:text-[17px] [&_.ant-collapse-header]:py-4!"
+              className="bg-transparent [&_.ant-collapse-item]:bg-white/95 [&_.ant-collapse-item]:mb-3 [&_.ant-collapse-item]:rounded-2xl! [&_.ant-collapse-item]:border [&_.ant-collapse-item]:border-teal-100/70 [&_.ant-collapse-item]:shadow-xs [&_.ant-collapse-header]:font-bold [&_.ant-collapse-header]:text-gray-900 [&_.ant-collapse-header]:text-base sm:[&_.ant-collapse-header]:text-[17px] [&_.ant-collapse-header]:py-4!"
             />
           </div>
         </ScrollReveal>

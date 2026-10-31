@@ -11,6 +11,7 @@ import {
 const Navbar = ({ onOpenTrial }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     let ticking = false;
@@ -35,20 +36,48 @@ const Navbar = ({ onOpenTrial }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Theo dõi mục đang xem trên màn hình để làm sáng nút trên header
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+    const sectionIds = ['pain-points', 'features', 'workflow', 'pricing', 'faq'];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-76px 0px -55% 0px' }
+    );
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
   const navLinks = [
-    { label: 'Giải pháp', href: '#pain-points' },
-    { label: 'Tính năng', href: '#features' },
-    { label: 'Quy trình', href: '#workflow' },
-    { label: 'Bảng giá', href: '#pricing' },
-    { label: 'Hỏi đáp', href: '#faq' },
+    { label: 'Giải pháp', href: '#pain-points', id: 'pain-points' },
+    { label: 'Tính năng', href: '#features', id: 'features' },
+    { label: 'Quy trình', href: '#workflow', id: 'workflow' },
+    { label: 'Bảng giá', href: '#pricing', id: 'pricing' },
+    { label: 'Hỏi đáp', href: '#faq', id: 'faq' },
   ];
 
+  // Cuộn mượt có bù trừ chiều cao của Sticky Header để không bị che khuất tiêu đề
   const handleNavClick = (e, href) => {
     if (href.startsWith('#')) {
       e.preventDefault();
       const target = document.querySelector(href);
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
+        const headerOffset = 76; // Bù trừ chiều cao header 68px + 8px khoảng thở
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
       }
     }
   };
@@ -84,33 +113,44 @@ const Navbar = ({ onOpenTrial }) => {
         }`}
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo với khung cố định kích thước chống dịch chuyển */}
+          {/* Logo với khung cố định kích thước chống dịch chuyển - không bị outline viền đen */}
           <Link
             id="link-landing-logo"
             href="/"
-            className="flex items-center no-underline group"
+            className="flex items-center no-underline outline-none focus:outline-none ring-0 focus:ring-0 border-0 group"
           >
-            <div className="flex items-center px-3 py-1.5 rounded-full bg-white/95 shadow-sm border border-white/50 group-hover:scale-105 group-hover:bg-white transition-transform duration-200">
+            <div className="flex items-center px-3.5 py-1.5 rounded-full bg-white shadow-sm border border-slate-200/50 group-hover:scale-105 group-hover:bg-white transition-all duration-200 outline-none">
               <img
                 src="/images/logo mobyflow2-01.png"
                 alt="MOBYFLOW - Mom Baby Flow"
-                className="h-7 sm:h-8 w-auto object-contain"
+                className="h-7 sm:h-8 w-auto object-contain pointer-events-none"
               />
             </div>
           </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`header-nav-link ${scrolled ? 'header-nav-link-scrolled' : ''}`}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`header-nav-link ${
+                    scrolled ? 'header-nav-link-scrolled' : ''
+                  } ${
+                    isActive
+                      ? scrolled
+                        ? '!bg-teal-50 !text-[#139091] font-bold shadow-2xs'
+                        : '!bg-white/20 !text-white font-bold'
+                      : ''
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Action Buttons */}

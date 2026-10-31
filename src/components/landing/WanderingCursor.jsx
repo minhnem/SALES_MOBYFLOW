@@ -8,22 +8,10 @@ import React, { useEffect, useState, useRef } from 'react';
  * 4. Chat trực tiếp với Dược sĩ tư vấn (trong Zalo ZNS bên phải)
  */
 const BUTTON_TARGETS = [
-  {
-    targetId: 'btn-hero-trial',
-    label: 'Dùng thử 14 ngày',
-  },
-  {
-    targetId: 'btn-hero-demo',
-    label: 'Xem cách thức hoạt động',
-  },
-  {
-    targetId: 'hero-zns-action-btn',
-    label: 'Đặt lại sữa ngay',
-  },
-  {
-    targetId: 'hero-zns-secondary-btn',
-    label: 'Chat với Dược sĩ tư vấn',
-  },
+  'btn-hero-trial',
+  'btn-hero-demo',
+  'hero-zns-action-btn',
+  'hero-zns-secondary-btn',
 ];
 
 const WanderingCursor = ({ containerRef }) => {
@@ -31,7 +19,6 @@ const WanderingCursor = ({ containerRef }) => {
     x: -100,
     y: -100,
     visible: false,
-    label: BUTTON_TARGETS[0].label,
     clicking: false,
   });
 
@@ -65,8 +52,8 @@ const WanderingCursor = ({ containerRef }) => {
     const moveToButton = (index) => {
       if (!isMounted) return;
 
-      const target = BUTTON_TARGETS[index];
-      const coords = getTargetCoordinates(target.targetId);
+      const targetId = BUTTON_TARGETS[index];
+      const coords = getTargetCoordinates(targetId);
 
       // Nếu nút chưa render xong, đợi 200ms thử lại
       if (!coords) {
@@ -76,12 +63,11 @@ const WanderingCursor = ({ containerRef }) => {
 
       currentIndexRef.current = index;
 
-      // 1. Cập nhật vị trí và tên nhãn -> Con trỏ lướt mượt đến nút (mất 1.2s theo CSS)
+      // 1. Cập nhật vị trí -> Con trỏ lướt mượt đến nút (mất 1.2s theo CSS)
       setCursor({
         x: coords.x,
         y: coords.y,
         visible: true,
-        label: target.label,
         clicking: false,
       });
 
@@ -93,7 +79,7 @@ const WanderingCursor = ({ containerRef }) => {
         setCursor((prev) => ({ ...prev, clicking: true }));
 
         // Cho nút lún nhẹ xuống để thấy phản hồi
-        const el = document.getElementById(target.targetId);
+        const el = document.getElementById(targetId);
         if (el) {
           el.classList.add('btn-simulated-active');
           setTimeout(() => el?.classList.remove('btn-simulated-active'), 400);
@@ -121,8 +107,8 @@ const WanderingCursor = ({ containerRef }) => {
 
     // Xử lý khi resize màn hình mà không làm reset chuỗi bấm
     const handleResize = () => {
-      const current = BUTTON_TARGETS[currentIndexRef.current];
-      const coords = getTargetCoordinates(current.targetId);
+      const targetId = BUTTON_TARGETS[currentIndexRef.current];
+      const coords = getTargetCoordinates(targetId);
       if (coords) {
         setCursor((prev) => ({ ...prev, x: coords.x, y: coords.y }));
       }
@@ -167,7 +153,7 @@ const WanderingCursor = ({ containerRef }) => {
           />
         </svg>
         <span className="cursor-label">
-          {cursor.label}
+          MobyFlow
         </span>
       </div>
     </div>

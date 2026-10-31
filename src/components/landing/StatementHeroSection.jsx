@@ -96,10 +96,10 @@ const StatementCursor = () => {
 /**
  * Hiệu ứng từng ký tự trượt lên (letter-rise) từ mờ về nét chuẩn Dabilux
  */
-const LetterRiseLine = ({ text, startIdx = 0, isAccent = false }) => {
+const LetterRiseLine = ({ text, startIdx = 0, isAccent = false, className = '' }) => {
   const chars = Array.from(text);
   return (
-    <span className="statement-line">
+    <span className={`statement-line ${className}`}>
       <span className="reveal-line load">
         {chars.map((ch, i) => (
           <span
@@ -136,7 +136,7 @@ const StatementHeroSection = ({ onOpenTrial }) => {
       <StatementCursor />
 
       {/* 3. Nội dung trung tâm Statement khổ lớn */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="statement-inner mx-auto flex flex-col items-center text-center">
 
           {/* Tagline định vị nhỏ phía trên */}
@@ -147,8 +147,8 @@ const StatementHeroSection = ({ onOpenTrial }) => {
             </span>
           </div>
 
-          {/* Dòng tiêu đề STATEMENT Khổng Lồ 3 Dòng */}
-          <h1 className="statement-title mb-3 sm:mb-4 font-black tracking-tight text-white uppercase transition-colors duration-500">
+          {/* Dòng tiêu đề STATEMENT Chuẩn 3 Dòng Cả Desktop & Mobile */}
+          <h1 className="statement-title mb-3 sm:mb-4 font-black tracking-tight text-white uppercase transition-colors duration-500 w-full">
             <LetterRiseLine text="MOBYFLOW LÀ CÁCH" startIdx={0} />
             <LetterRiseLine text="SHOP MẸ & BÉ GIỮ CHÂN KHÁCH HÀNG" startIdx={17} />
             <LetterRiseLine text="TỰ ĐỘNG HƠN, BỀN VỮNG HƠN" startIdx={52} isAccent />
@@ -158,8 +158,10 @@ const StatementHeroSection = ({ onOpenTrial }) => {
           <div className="mb-3.5 sm:mb-4 max-w-4xl">
             <p className="statement-sub mb-2.5 sm:mb-3 font-bold text-white/90 uppercase tracking-wide">
               Bộ 3 kịch bản tự động hóa qua{' '}
-              <span className="text-teal-300 font-extrabold">Zalo ZNS</span> &amp;{' '}
-              <span className="text-sky-300 font-extrabold">KiotViet</span>:
+              <span className="whitespace-nowrap">
+                <span className="text-teal-300 font-extrabold">Zalo ZNS</span> &amp;{' '}
+                <span className="text-sky-300 font-extrabold">KiotViet</span>:
+              </span>
             </p>
             <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
               <span className="chip-highlight text-xs sm:text-sm tracking-wide">
@@ -190,7 +192,7 @@ const StatementHeroSection = ({ onOpenTrial }) => {
               size="large"
               icon={<ThunderboltFilled />}
               onClick={onOpenTrial}
-              className="btn-shine w-full sm:w-auto h-13 sm:h-14 px-8 text-base sm:text-lg font-bold bg-gradient-to-r from-[#139091] via-teal-600 to-emerald-600 hover:from-teal-600 hover:to-[#0f766e] border-0 rounded-2xl shadow-xl shadow-teal-700/30 text-white flex items-center justify-center"
+              className="btn-shine w-full sm:w-auto h-12 sm:h-14 py-3 sm:py-3.5 px-8 text-base sm:text-lg font-bold bg-gradient-to-r from-[#139091] via-teal-600 to-emerald-600 hover:from-teal-600 hover:to-[#0f766e] border-0 rounded-2xl shadow-xl shadow-teal-700/30 text-white flex items-center justify-center whitespace-nowrap shrink-0 hover:scale-105 transition-all"
             >
               Trải nghiệm 14 ngày miễn phí
             </Button>
@@ -199,7 +201,7 @@ const StatementHeroSection = ({ onOpenTrial }) => {
               id="btn-statement-scroll-demo"
               type="button"
               onClick={handleScrollToDemo}
-              className="w-full sm:w-auto h-13 sm:h-14 px-7 text-base font-bold text-white/90 hover:text-white bg-white/10 hover:bg-white/15 border border-white/20 rounded-2xl backdrop-blur-md transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer shadow-lg"
+              className="w-full sm:w-auto h-12 sm:h-14 py-3 sm:py-3.5 px-7 text-base font-bold text-white/90 hover:text-white bg-white/10 hover:bg-white/15 border border-white/20 rounded-2xl backdrop-blur-md transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer shadow-lg whitespace-nowrap shrink-0 hover:scale-105"
             >
               <PlayCircleOutlined className="text-teal-300 text-lg" />
               <span>Xem Demo tương tác ZNS</span>

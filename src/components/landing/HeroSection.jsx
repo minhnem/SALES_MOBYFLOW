@@ -36,10 +36,10 @@ const CORE_FEATURES = [
       suggestionLabel: 'Sản phẩm bổ sung kịp thời:',
       suggestionValue: 'Sữa A2 số 1 (800g) - Lon mới',
       offerLabel: 'Ưu đãi mẹ bỉm đặt sớm:',
-      offerValue: 'Giảm 40.000₫ + Freeship giao nhanh 2h',
+      offerValue: 'Giảm 40.000₫',
       voucherDuration: 'Áp dụng đặt lại trong 48h tới',
-      primaryBtnText: 'Đặt lại sữa ngay (Giao trong 2h)',
-      secondaryBtnText: 'Chat trực tiếp với Dược sĩ tư vấn',
+      primaryBtnText: 'Đặt lại sữa ngay',
+      secondaryBtnText: 'Nhắn tin cho Mobyflow',
       resultText: 'Mẹ Thảo đã bấm đặt lại đơn!',
       resultSub: 'Đơn hàng #KV-98432 đã tự động tạo trên KiotViet',
       resultAmount: '+520.000₫',
@@ -69,8 +69,8 @@ const CORE_FEATURES = [
       offerLabel: 'Quà tặng cột mốc độc quyền:',
       offerValue: 'Tặng Bát thìa ăn dặm + Voucher giảm 35.000₫',
       voucherDuration: 'Áp dụng trong 7 ngày tới',
-      primaryBtnText: 'Xem Combo ăn dặm 6 tháng & Nhận quà',
-      secondaryBtnText: 'Tư vấn thực đơn ăn dặm cho bé 6m',
+      primaryBtnText: 'Đặt hàng trên website',
+      secondaryBtnText: 'Nhắn tin cho Mobyflow',
       resultText: 'Mẹ Thảo đã bấm chọn Combo ăn dặm!',
       resultSub: 'Đơn hàng combo ăn dặm #KV-99214 đã tạo trên KiotViet',
       resultAmount: '+480.000₫',
@@ -100,8 +100,8 @@ const CORE_FEATURES = [
       offerLabel: 'Mã ưu đãi sinh nhật độc quyền:',
       offerValue: 'Mã: VIPMOM15 (Giảm tối đa 120.000₫)',
       voucherDuration: 'Áp dụng từ 15/11 đến hết 18/11',
-      primaryBtnText: 'Áp dụng mã & Sắm đồ cho bé ngay',
-      secondaryBtnText: 'Kiểm tra điểm tích lũy thành viên',
+      primaryBtnText: 'Đặt hàng trên website',
+      secondaryBtnText: 'Nhắn tin cho Mobyflow',
       resultText: 'Mẹ Thảo đã kích hoạt voucher thành công!',
       resultSub: 'Đơn hàng ưu đãi hội viên #KV-99120 đã xác nhận',
       resultAmount: '+1.150.000₫',
@@ -227,7 +227,7 @@ const HeroSection = ({ onOpenTrial }) => {
                   size="large"
                   icon={<ThunderboltOutlined />}
                   onClick={onOpenTrial}
-                  className="w-full sm:w-auto h-12 px-8 text-base font-bold bg-gradient-to-r from-[#139091] to-teal-700 hover:from-teal-700 hover:to-[#0f766e] border-0 rounded-2xl shadow-lg shadow-teal-600/25 flex items-center justify-center text-white"
+                  className="btn-shine w-full sm:w-auto h-12 px-8 text-base font-bold bg-gradient-to-r from-[#139091] via-teal-600 to-emerald-600 hover:from-teal-600 hover:to-[#0f766e] border-0 rounded-2xl shadow-lg shadow-teal-600/30 flex items-center justify-center text-white hover:scale-105 transition-all cursor-pointer"
                 >
                   Dùng thử miễn phí 14 ngày
                 </Button>
@@ -263,7 +263,7 @@ const HeroSection = ({ onOpenTrial }) => {
                 </div>
                 <div>
                   <div className="text-2xl sm:text-3xl font-extrabold text-indigo-600 tracking-tight">
-                    +40%
+                    +35%
                   </div>
                   <div className="text-xs sm:text-sm text-gray-600 font-medium mt-1">Tăng khách mua lại</div>
                 </div>

@@ -17,7 +17,7 @@ const ProductShowcase = ({ onOpenTrial }) => {
   ];
 
   return (
-    <section id="showcase" className="py-20 bg-slate-950 text-white relative overflow-hidden">
+    <section id="showcase" className="scroll-mt-20 py-12 sm:py-16 bg-slate-950 text-white relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-[#139091]/25 via-teal-600/20 to-purple-600/20 rounded-full blur-[120px] pointer-events-none" />
 
